@@ -1,0 +1,45 @@
+//
+//  WallPost.swift
+//  AZ-Social
+//
+//  Created by  Denis Ovchar on 29.04.17.
+//  Copyright © 2017  Denis Ovchar. All rights reserved.
+//
+
+import UIKit
+
+class WallPost
+{
+    var sender:Friend
+    var body:String?
+    var map:MapDirection?
+    var pictureUrls:[String]?
+    var pictureSizes:[CGSize]?
+    var time:Date
+    init(send:Friend,time:Date) {
+        sender = send
+        self.time = time
+    }
+    
+    
+}
+
+
+class WallPostManager
+{
+    let postfix = "dfgdfgdfgd"
+    
+    func load()
+    {
+        
+    }
+    func reload()
+    {
+    
+    }
+    func gotData(data:Data)
+    {
+        
+    }
+    
+}

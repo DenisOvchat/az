@@ -23,91 +23,88 @@ class postCell:UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSour
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
-    
-    
-    func setcell(post:WallPost)
+    var post:WallPost!
     {
-        avat.imageView.downloadedFrom(link: post.sender.pictUrl)
-        avat.setting(isonline: post.sender.isOnline, radius: 20)
-        nameLabel.text = post.sender.name + " " + post.sender.secondName
-        
-        let postTime = post.time
-        let now = Date()
-        let dif = now.timeIntervalSince(postTime)
-        var formatter = DateFormatter()
-        if dif > 172800
-        {
-            formatter.dateFormat = "dd MM YYYY HH:mm"
-            timeLabel.text = formatter.string(from: postTime)
-        }
-        else
-        {
-            if dif > 86400
+        didSet{
+            avat.imageView.downloadedFrom(link: post.sender.pictUrl)
+            avat.setting(isonline: post.sender.isOnline, radius: 20)
+            nameLabel.text = post.sender.name + " " + post.sender.secondName
+            
+            let postTime = post.time
+            let now = Date()
+            let dif = now.timeIntervalSince(postTime)
+            
+            var formatter = DateFormatter()
+            if dif > 172800
             {
-                formatter.dateFormat = "вчера HH:mm"
+                formatter.dateFormat = "dd MM YYYY HH:mm"
                 timeLabel.text = formatter.string(from: postTime)
             }
             else
             {
-                if dif > 3600
+                if dif > 86400
                 {
-                    formatter.dateFormat = "сегодня HH:mm"
+                    formatter.dateFormat = "вчера HH:mm"
                     timeLabel.text = formatter.string(from: postTime)
                 }
                 else
                 {
-                    if dif > 60
+                    if dif > 3600
                     {
-                        timeLabel.text = Int(dif/60).description + "минут назад"
+                        formatter.dateFormat = "сегодня HH:mm"
+                        timeLabel.text = formatter.string(from: postTime)
                     }
                     else
                     {
-                         timeLabel.text = "только что"
+                        if dif > 60
+                        {
+                            timeLabel.text = Int(dif/60).description + "минут назад"
+                        }
+                        else
+                        {
+                            timeLabel.text = "только что"
+                        }
                     }
                 }
             }
-        }
-        
-        bodyLabel.text = post.body
-        
-        if post.pictureUrls != nil
-        {
             
+            bodyLabel.text = post.body
             
-        }
-        else
-        {
-            if post.map != nil
+            if post.pictureUrls != nil
             {
                 
+                
             }
+            else
+            {
+                if post.map != nil
+                {
+                    
+                }
+            }
+            
+            
+            //  89662788169
+           
+            let mosaicLayout = TRMosaicLayout()
+            collectionView.collectionViewLayout = mosaicLayout
+            mosaicLayout.delegate = self
+            
+            
+            collectionView.delegate = self
+            collectionView.dataSource = self
+            collectionView.reloadData()
+            //collectionView.flow
+            //collectionView.setsize
+            //let layout = UICollectionViewFlowLayout()
+            
+            //layout.scrollDirection = .vertical
+            //collectionView.lay
         }
-        
-        
-      //  89662788169
-        
-        
-        
-        
-        
-        
-        
-        let mosaicLayout = TRMosaicLayout()
-        collectionView.collectionViewLayout = mosaicLayout
-        mosaicLayout.delegate = self
-    
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.reloadData()
-        //collectionView.flow
-        //collectionView.setsize
-        //let layout = UICollectionViewFlowLayout()
-        
-        //layout.scrollDirection = .vertical
-        //collectionView.lay
     }
+    
+    
+    
     
     
     

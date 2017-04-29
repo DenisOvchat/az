@@ -10,5 +10,9 @@ import Foundation
 import  UIKit
 class LentaVC:UIViewController
 {
-    var 
+    var postsStorage = PostStorage()
+    override func loadView() {
+        super.loadView()
+        
+    }
 }

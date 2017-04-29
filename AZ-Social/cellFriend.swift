@@ -29,7 +29,7 @@ class cellFriend:UITableViewCell
         avat.setting(isonline: true, radius: 25)
 
         avat.imageView.downloadedFrom(link: friend.pictUrl)
-
+        avat.imageView = UIImageView(
     }
     
 }

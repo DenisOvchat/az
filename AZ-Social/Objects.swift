@@ -32,21 +32,7 @@ class Friend
         self.id = id
     }
 }
-class WallPost
-{
-    var sender:Friend
-    var body:String!
-    var map:MapDirection?
-    var pictureUrls:[String]?
-    var pictureSizes:[CGSize]?
-    var time:Date
-    init(send:Friend,time:Date) {
-        sender = send
-        self.time = time
-    }
-    
-    
-}
+
 class MapDirection
 {
     
@@ -63,7 +49,7 @@ class FullProfile:Friend
     var type:String?
     var isMine:Bool
     var topImageUrl:String?
-    var Posts=[Post]()
+    var Posts=[WallPost]()
     var friends=[Friend]()
     init(mine:Bool,name:String,secondName:String,pictUrl:String,isOnline:Bool,id:Int)
     {
@@ -74,10 +60,7 @@ class FullProfile:Friend
     
 }
 
-class Post
-{
-    
-}
+
 class Chat
 {
     var messages=[Message]()
