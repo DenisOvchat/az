@@ -20,7 +20,7 @@ class ServerManager
     
     
     
-    func GETRequestByAddingSubpath(postfix:String,complititionHandler: @escaping (Data?) -> Void)
+    func GETRequestByAdding(postfix:String,complititionHandler: @escaping (Data?) -> Void)
     {
         let urlString = serverDomain + postfix
         
@@ -56,5 +56,30 @@ class ServerManager
         return serverDomain
     }
     
+    func POSTJSONRequestByAdding(postfix:String,data:[String:Any],complititionHandler: @escaping (Data?) -> Void)
+    {
+        let configuration = URLSessionConfiguration.default
+        let session = URLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
+        
+        let url = NSURL(string: serverDomain + postfix)
+        let request = NSMutableURLRequest(url: url! as URL, cachePolicy: NSURLRequest.CachePolicy.useProtocolCachePolicy, timeoutInterval: 60)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        
+        do {
+            let postData = try JSONSerialization.data(withJSONObject: data, options:JSONSerialization.WritingOptions.prettyPrinted)
+            request.httpBody = postData
+            
+            let postDataTask = session.dataTask(with: request as URLRequest) { (data:Data?, response:URLResponse?, error:Error?) -> Void in
+                
+                if data != nil {
+                        complititionHandler(data)
+                }
+            }
+            postDataTask.resume()
+            
+        } catch { }
+    }
 }
 

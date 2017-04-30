@@ -7,8 +7,9 @@
 //
 
 import Foundation
-class Entity{
-    
+class Entity
+{
+    var id:Int = 0
     
 }
 

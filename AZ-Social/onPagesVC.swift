@@ -8,6 +8,22 @@
 
 import Foundation
 import UIKit
+class RegistrationData
+{
+    var mail:String?
+    var code:String?
+    var password:String!
+    var type:String!
+    var firstName:String!
+    var secondName:String!
+    var birthday:Int!
+    var gender:String!
+    var avat:Data?
+    var backGround:Data?
+    var phone:String?
+    
+}
+
 class OnPagesVC:UIViewController,UITextFieldDelegate
 {
     @IBOutlet weak var field: UITextField!

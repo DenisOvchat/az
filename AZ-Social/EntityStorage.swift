@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
-protocol EntityProtocol {
-    func load( )
+protocol EntityStorageDelegate {
+    func load()
+    
     
 }
 
@@ -17,7 +18,7 @@ protocol EntityProtocol {
 
 
 
-class classicTableDataSourceAndDelegate:UITableViewDataSource
+/*class classicTableDataSourceAndDelegate:UITableViewDataSource
 {
     
     init(tableView:UITableView,entitiesStorage:EntitiesStorage)
@@ -25,27 +26,30 @@ class classicTableDataSourceAndDelegate:UITableViewDataSource
         
     }
 }
-
+*/
 
 
 
 class EntitiesStorage
 {
-    var entitiesDictionary = [Int:Entity]()
-    var entitiesArray = [Entity]()
+    private var entitiesDictionary = [Int:Entity]()
+    private var entitiesArray = [Entity]()
+    
+    var isLoadingNewElements:Bool = false
+    
+    var delegate:EntityStorageDelegate?
+    
     
     var count:Int
+    {
+        get
         {
-        get{
-            
+            return entitiesArray.count
         }
     }
     
     
-    func load()
-    {
-        
-    }
+    
     
     func loadMore(count:Int)
     {
@@ -57,8 +61,24 @@ class EntitiesStorage
         
     }
     
+    subscript(index: Int) -> Entity
+    {
+        get {
+            return entitiesArray[index]
+        }
+     
+    }
     
+    func elementBy(id:Int)->Entity?
+    {
+        return entitiesDictionary[id]
+    }
     
+    func add(element:Entity,by id:Int)
+    {
+        //entitiesArray.append(element)
+        //entitiesDictionary.
+    }
     
     
     

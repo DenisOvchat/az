@@ -8,11 +8,18 @@
 
 import Foundation
 import  UIKit
-class LentaVC:UIViewController
+/*class LentaVC:UIViewController :UITableViewDataSource,UITableViewDelegate
 {
-    var postsStorage = PostStorage()
+    var postsStorage = WallPostStorage()
+    
+    
+    
     override func loadView() {
         super.loadView()
         
     }
-}
+    
+    
+    
+    
+}*/

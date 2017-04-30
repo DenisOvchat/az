@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WallPost
+class WallPost:Entity
 {
     var sender:Friend
     var body:String?
@@ -25,21 +25,3 @@ class WallPost
 }
 
 
-class WallPostManager
-{
-    let postfix = "dfgdfgdfgd"
-    
-    func load()
-    {
-        
-    }
-    func reload()
-    {
-    
-    }
-    func gotData(data:Data)
-    {
-        
-    }
-    
-}

@@ -24,7 +24,7 @@ class LoginVC:UIViewController
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        let loged:Bool=true
+        let loged:Bool=false
         if loged
         {
             performSegue(withIdentifier: "toApp", sender: nil)
