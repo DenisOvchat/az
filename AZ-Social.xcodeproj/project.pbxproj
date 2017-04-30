@@ -19,6 +19,12 @@
 		981F8E7B1E6AC843003A280A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 981F8E7A1E6AC843003A280A /* Assets.xcassets */; };
 		981F8E7E1E6AC843003A280A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 981F8E7C1E6AC843003A280A /* LaunchScreen.storyboard */; };
 		98405E391EB5E10200639873 /* Registrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98405E381EB5E10200639873 /* Registrator.swift */; };
+		98405E3C1EB5E8C800639873 /* PhoneCodeInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98405E3B1EB5E8C800639873 /* PhoneCodeInputVC.swift */; };
+		98405E3E1EB5E8E300639873 /* NameInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98405E3D1EB5E8E300639873 /* NameInputVC.swift */; };
+		98405E401EB5E8F500639873 /* BirthdayInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98405E3F1EB5E8F500639873 /* BirthdayInputVC.swift */; };
+		98405E421EB5E91400639873 /* FromInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98405E411EB5E91400639873 /* FromInputVC.swift */; };
+		98405E441EB5E92900639873 /* PhotoInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98405E431EB5E92900639873 /* PhotoInputVC.swift */; };
+		98405E461EB5EA0E00639873 /* MailInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98405E451EB5EA0E00639873 /* MailInputVC.swift */; };
 		98476A421E72AF8B00E7CE3B /* cellFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98476A411E72AF8B00E7CE3B /* cellFriend.swift */; };
 		98476A441E72B36F00E7CE3B /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98476A431E72B36F00E7CE3B /* AvatarImage.swift */; };
 		98476A461E72B5EB00E7CE3B /* 5FreindsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98476A451E72B5EB00E7CE3B /* 5FreindsCell.swift */; };
@@ -73,6 +79,12 @@
 		981F8E7D1E6AC843003A280A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		981F8E7F1E6AC843003A280A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98405E381EB5E10200639873 /* Registrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registrator.swift; sourceTree = "<group>"; };
+		98405E3B1EB5E8C800639873 /* PhoneCodeInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneCodeInputVC.swift; sourceTree = "<group>"; };
+		98405E3D1EB5E8E300639873 /* NameInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameInputVC.swift; sourceTree = "<group>"; };
+		98405E3F1EB5E8F500639873 /* BirthdayInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayInputVC.swift; sourceTree = "<group>"; };
+		98405E411EB5E91400639873 /* FromInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromInputVC.swift; sourceTree = "<group>"; };
+		98405E431EB5E92900639873 /* PhotoInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoInputVC.swift; sourceTree = "<group>"; };
+		98405E451EB5EA0E00639873 /* MailInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailInputVC.swift; sourceTree = "<group>"; };
 		98476A411E72AF8B00E7CE3B /* cellFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cellFriend.swift; sourceTree = "<group>"; };
 		98476A431E72B36F00E7CE3B /* AvatarImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
 		98476A451E72B5EB00E7CE3B /* 5FreindsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 5FreindsCell.swift; sourceTree = "<group>"; };
@@ -182,7 +194,6 @@
 				980C733D1E9D17F40067F4D3 /* layout.swift */,
 				987310C11E82B2F2000196DA /* CustSegue.swift */,
 				98D796111E79418E004EBA50 /* LoginVC.swift */,
-				98D7960F1E793C37004EBA50 /* onPagesVC.swift */,
 				981F8E7C1E6AC843003A280A /* LaunchScreen.storyboard */,
 				981F8E7F1E6AC843003A280A /* Info.plist */,
 				981F8E771E6AC843003A280A /* AZ_Social.xcdatamodeld */,
@@ -192,6 +203,20 @@
 				98C720D21EAC9DAF00BDAD18 /* AZ-Social-Bridging-Header.h */,
 			);
 			path = "AZ-Social";
+			sourceTree = "<group>";
+		};
+		98405E3A1EB5E87700639873 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				98D7960F1E793C37004EBA50 /* onPagesVC.swift */,
+				98405E451EB5EA0E00639873 /* MailInputVC.swift */,
+				98405E3B1EB5E8C800639873 /* PhoneCodeInputVC.swift */,
+				98405E3D1EB5E8E300639873 /* NameInputVC.swift */,
+				98405E3F1EB5E8F500639873 /* BirthdayInputVC.swift */,
+				98405E411EB5E91400639873 /* FromInputVC.swift */,
+				98405E431EB5E92900639873 /* PhotoInputVC.swift */,
+			);
+			name = Registration;
 			sourceTree = "<group>";
 		};
 		98946AF11EB49F4500625614 /* Extensions */ = {
@@ -221,6 +246,7 @@
 				980E9C301E6FDFDE003527E1 /* FriendsVC.swift */,
 				98C720CF1EAC99EB00BDAD18 /* MapsVC.swift */,
 				980E9C2E1E6FC6D1003527E1 /* LentaVC.swift */,
+				98405E3A1EB5E87700639873 /* Registration */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -418,8 +444,11 @@
 				98D796101E793C37004EBA50 /* onPagesVC.swift in Sources */,
 				981F8E791E6AC843003A280A /* AZ_Social.xcdatamodeld in Sources */,
 				98D796121E79418E004EBA50 /* LoginVC.swift in Sources */,
+				98405E401EB5E8F500639873 /* BirthdayInputVC.swift in Sources */,
 				980C73401E9E21590067F4D3 /* postCell.swift in Sources */,
+				98405E3E1EB5E8E300639873 /* NameInputVC.swift in Sources */,
 				980C733E1E9D17F40067F4D3 /* layout.swift in Sources */,
+				98405E421EB5E91400639873 /* FromInputVC.swift in Sources */,
 				98946AF71EB4AA9600625614 /* DataTranslator.swift in Sources */,
 				980E9C2F1E6FC6D1003527E1 /* LentaVC.swift in Sources */,
 				98476A461E72B5EB00E7CE3B /* 5FreindsCell.swift in Sources */,
@@ -442,6 +471,7 @@
 				98C43F541E866AEB007023A3 /* DialogsVC.swift in Sources */,
 				981F8E711E6AC843003A280A /* AppDelegate.swift in Sources */,
 				98946AFB1EB4C29500625614 /* DataManager.swift in Sources */,
+				98405E441EB5E92900639873 /* PhotoInputVC.swift in Sources */,
 				98E4B75F1E9CC405006856EF /* profileMainCell.swift in Sources */,
 				98946B001EB4CAF000625614 /* EntityStorage.swift in Sources */,
 				98E84D5A1E74065B00F0A110 /* DialogVC.swift in Sources */,
@@ -451,6 +481,8 @@
 				98B6B5AD1E8C2B6500E220D3 /* TBC.swift in Sources */,
 				98FBA5D51E8A92FB00C827C5 /* DialogCell.swift in Sources */,
 				98476A421E72AF8B00E7CE3B /* cellFriend.swift in Sources */,
+				98405E461EB5EA0E00639873 /* MailInputVC.swift in Sources */,
+				98405E3C1EB5E8C800639873 /* PhoneCodeInputVC.swift in Sources */,
 				980E9C311E6FDFDE003527E1 /* FriendsVC.swift in Sources */,
 				98C43F561E866BF0007023A3 /* DialogsCell.swift in Sources */,
 			);

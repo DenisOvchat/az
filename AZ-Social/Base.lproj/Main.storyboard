@@ -1028,7 +1028,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XNh-hg-Yil" id="gIk-CP-7Hu">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1130,138 +1130,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGi-ML-kuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-615" y="16"/>
-        </scene>
-        <!--Name InputVC-->
-        <scene sceneID="r3g-Cd-Ptr">
-            <objects>
-                <viewController id="GIH-6a-i9Y" customClass="NameInputVC" customModule="AZ_Social" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jqU-3F-KPL"/>
-                        <viewControllerLayoutGuide type="bottom" id="E70-48-KaC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8MI-al-a8Q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqk-kq-1j8">
-                                <rect key="frame" x="117" y="467" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="подтвердить"/>
-                                <connections>
-                                    <segue destination="fPV-fY-hc9" kind="show" customClass="CustSegue" customModule="AZ_Social" customModuleProvider="target" id="XcA-WJ-1m8"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Как вас зовут?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvk-7M-FIC">
-                                <rect key="frame" x="142" y="236" width="117" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eYC-ea-M2w" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3510" y="-1516"/>
-        </scene>
-        <!--Birthday InputVC-->
-        <scene sceneID="t6T-Vn-VX3">
-            <objects>
-                <viewController id="fPV-fY-hc9" customClass="BirthdayInputVC" customModule="AZ_Social" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dNJ-ma-Nt9"/>
-                        <viewControllerLayoutGuide type="bottom" id="MPg-Am-spC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ngx-66-Pr7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GcU-3F-1g8">
-                                <rect key="frame" x="127" y="451" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="подтвердить"/>
-                                <connections>
-                                    <segue destination="tMb-yP-qhm" kind="show" customClass="CustSegue" customModule="AZ_Social" customModuleProvider="target" id="uNp-Nv-m67"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Когда у вас день рождения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTT-d1-vVw">
-                                <rect key="frame" x="64" y="204" width="219" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XnF-M9-Vup" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4390" y="-1444"/>
-        </scene>
-        <!--From InputVC-->
-        <scene sceneID="oVv-YE-a50">
-            <objects>
-                <viewController id="tMb-yP-qhm" customClass="FromInputVC" customModule="AZ_Social" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aBB-X7-Dm2"/>
-                        <viewControllerLayoutGuide type="bottom" id="qVh-yZ-Nyd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1m6-As-imK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Откуда вы?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvl-ki-l1i">
-                                <rect key="frame" x="152" y="216" width="91" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwE-6B-wB4">
-                                <rect key="frame" x="140" y="469" width="45" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Далее"/>
-                                <connections>
-                                    <segue destination="tmc-Ah-qpq" kind="show" customClass="CustSegue" customModule="AZ_Social" customModuleProvider="target" id="R5o-zg-xN7"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Utc-LR-wsR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4838" y="-1308"/>
-        </scene>
-        <!--Photo InputVC-->
-        <scene sceneID="qJ3-Te-CDa">
-            <objects>
-                <viewController id="tmc-Ah-qpq" customClass="PhotoInputVC" customModule="AZ_Social" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6S9-bz-Rea"/>
-                        <viewControllerLayoutGuide type="bottom" id="e0F-rv-PUE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fvQ-80-5Za">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Наконец, добавьте свое фото!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wy-tK-hiA">
-                                <rect key="frame" x="66" y="143" width="242" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jbq-rH-go9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5588" y="-1308"/>
         </scene>
         <!--On PagesVC-->
         <scene sceneID="LS3-Us-lJJ">
@@ -1656,7 +1524,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="4aH-Cx-zhv"/>
                     <connections>
-                        <outlet property="field" destination="gpl-oU-Xmk" id="zlO-5e-trl"/>
+                        <outlet property="firstNameField" destination="Cme-tg-fHh" id="Ypd-gY-X17"/>
+                        <outlet property="secondNameField" destination="gpl-oU-Xmk" id="gYu-Wh-Zeq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9M-Yi-46j" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1767,6 +1636,9 @@
                                 <state key="normal" title="Мужской">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="maleBut:" destination="Nv2-QG-aFz" eventType="touchUpInside" id="Lej-n8-Tqg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fa-Aa-652">
                                 <rect key="frame" x="240" y="430" width="46" height="30"/>
@@ -1777,6 +1649,9 @@
                                 <state key="normal" title="Женский">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="femaleBut:" destination="Nv2-QG-aFz" eventType="touchUpInside" id="hYs-nn-fsz"/>
+                                </connections>
                             </button>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D97-Hb-lPC">
                                 <rect key="frame" x="53" y="367" width="225" height="14"/>
@@ -1821,6 +1696,8 @@
                     <navigationItem key="navigationItem" id="buR-D9-0EE"/>
                     <connections>
                         <outlet property="dateLabel" destination="ige-Hx-0Ui" id="iqW-Ao-kBv"/>
+                        <outlet property="femaleButton" destination="2Fa-Aa-652" id="m8x-Ev-aBr"/>
+                        <outlet property="maleButton" destination="Uqb-kH-ggq" id="MVm-7G-o4L"/>
                         <outlet property="picker" destination="vDX-C2-AEe" id="le3-1C-3Hn"/>
                     </connections>
                 </viewController>

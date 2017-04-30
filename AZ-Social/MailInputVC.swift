@@ -1,5 +1,5 @@
 //
-//  PhoneCodeInputVC.swift
+//  MailInputVC.swift
 //  AZ-Social
 //
 //  Created by  Denis Ovchar on 30.04.17.
@@ -7,11 +7,12 @@
 //
 
 import UIKit
-class PhoneCodeInputVC:UIViewController,UITextFieldDelegate
+class MailInputVC:UIViewController,UITextFieldDelegate
 {
     @IBOutlet weak var field: UITextField!
     var pgCont:UIPageControl!
     var rigistrationData:[String:Any] = [String:Any]()
+
     override func viewDidLoad() {
         field.keyboardType = .decimalPad
         field.delegate =  self
@@ -88,12 +89,9 @@ class PhoneCodeInputVC:UIViewController,UITextFieldDelegate
             return true
         }
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        rigistrationData["phone"] = field.text
         (segue.destination as! NameInputVC).pgCont = pgCont
-        (segue.destination as! NameInputVC).rigistrationData = rigistrationData
-
     }
     
 }

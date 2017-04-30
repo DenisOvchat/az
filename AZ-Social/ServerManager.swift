@@ -41,13 +41,13 @@ class ServerManager
     {
         return ServerManager.instances[named]
     }
-    func addServerManager(named:String,domain:String)
+    static func addServerManager(named:String,domain:String)
     {
         let manager = ServerManager()
         manager.serverDomain = domain
         ServerManager.instances[named] = manager
     }
-    func deliteServerManager(named:String)
+    static func deliteServerManager(named:String)
     {
         ServerManager.instances[named] = nil
     }

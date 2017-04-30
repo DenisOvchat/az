@@ -346,7 +346,7 @@
                   moduleName = "AZ-Social"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/denisovchar/Documents/AZ-Social/AZ-Social/Entity.swift"
-                  timestampString = "515234167.457132"
+                  timestampString = "515242362.837372"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -361,7 +361,7 @@
                   moduleName = "AZ-Social"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/denisovchar/Documents/AZ-Social/AZ-Social/Entity.swift"
-                  timestampString = "515234167.461439"
+                  timestampString = "515242362.840172"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -376,7 +376,7 @@
                   moduleName = "AZ-Social"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/denisovchar/Documents/AZ-Social/AZ-Social/Entity.swift"
-                  timestampString = "515234167.466058"
+                  timestampString = "515242362.842884"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
@@ -391,7 +391,7 @@
                   moduleName = "AZ-Social"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/denisovchar/Documents/AZ-Social/AZ-Social/Entity.swift"
-                  timestampString = "515234167.475188"
+                  timestampString = "515242362.845676"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -415,6 +415,22 @@
             endingLineNumber = "68"
             landmarkName = "EntitiesStorage"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AZ-Social/PhoneCodeInputVC.swift"
+            timestampString = "515240085.878026"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

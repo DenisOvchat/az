@@ -6,11 +6,3 @@
 //  Copyright © 2017  Denis Ovchar. All rights reserved.
 //
 
-import Foundation
-class Registrator
-{
-    static func register(with data:RegistrationData,serverManager:ServerManager)
-    {
-        
-    }
-}
