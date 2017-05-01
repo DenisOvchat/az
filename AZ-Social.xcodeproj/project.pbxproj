@@ -30,6 +30,9 @@
 		98476A461E72B5EB00E7CE3B /* 5FreindsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98476A451E72B5EB00E7CE3B /* 5FreindsCell.swift */; };
 		984A5E681E7C00B3008EC368 /* ФонРегистрации.png in Resources */ = {isa = PBXBuildFile; fileRef = 984A5E671E7C00B3008EC368 /* ФонРегистрации.png */; };
 		987310C21E82B2F2000196DA /* CustSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987310C11E82B2F2000196DA /* CustSegue.swift */; };
+		98822C0B1EB7873F008953C2 /* LoaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98822C0A1EB7873F008953C2 /* LoaderDelegate.swift */; };
+		98822C101EB7957E008953C2 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98822C0F1EB7957E008953C2 /* Loader.swift */; };
+		98822C121EB79597008953C2 /* WallPostLoaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98822C111EB79597008953C2 /* WallPostLoaders.swift */; };
 		988E5FFF1E8BE70C0038CC9F /* chatLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E5FFE1E8BE70C0038CC9F /* chatLabel.swift */; };
 		98946AF31EB4A02D00625614 /* WallPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98946AF21EB4A02D00625614 /* WallPost.swift */; };
 		98946AF51EB4A5ED00625614 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98946AF41EB4A5ED00625614 /* ServerManager.swift */; };
@@ -90,6 +93,9 @@
 		98476A451E72B5EB00E7CE3B /* 5FreindsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 5FreindsCell.swift; sourceTree = "<group>"; };
 		984A5E671E7C00B3008EC368 /* ФонРегистрации.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ФонРегистрации.png"; sourceTree = "<group>"; };
 		987310C11E82B2F2000196DA /* CustSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustSegue.swift; sourceTree = "<group>"; };
+		98822C0A1EB7873F008953C2 /* LoaderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderDelegate.swift; sourceTree = "<group>"; };
+		98822C0F1EB7957E008953C2 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		98822C111EB79597008953C2 /* WallPostLoaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPostLoaders.swift; sourceTree = "<group>"; };
 		988E5FFE1E8BE70C0038CC9F /* chatLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chatLabel.swift; sourceTree = "<group>"; };
 		98946AF21EB4A02D00625614 /* WallPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPost.swift; sourceTree = "<group>"; };
 		98946AF41EB4A5ED00625614 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
@@ -180,7 +186,7 @@
 				989F97A41EB34E66004DC85B /* Networking */,
 				98946B051EB4D59E00625614 /* Controllers */,
 				98946B031EB4D4B300625614 /* ViewControllers */,
-				989F97AB1EB359AD004DC85B /* Entities */,
+				989F97AB1EB359AD004DC85B /* DataStorage */,
 				981F8E701E6AC843003A280A /* AppDelegate.swift */,
 				98946AFA1EB4C29500625614 /* DataManager.swift */,
 				98B6B5A81E8C154100E220D3 /* FriendsSwipe.swift */,
@@ -193,7 +199,6 @@
 				981F8E741E6AC843003A280A /* Main.storyboard */,
 				980C733D1E9D17F40067F4D3 /* layout.swift */,
 				987310C11E82B2F2000196DA /* CustSegue.swift */,
-				98D796111E79418E004EBA50 /* LoginVC.swift */,
 				981F8E7C1E6AC843003A280A /* LaunchScreen.storyboard */,
 				981F8E7F1E6AC843003A280A /* Info.plist */,
 				981F8E771E6AC843003A280A /* AZ_Social.xcdatamodeld */,
@@ -219,6 +224,48 @@
 			name = Registration;
 			sourceTree = "<group>";
 		};
+		98822C081EB76B75008953C2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				98D796111E79418E004EBA50 /* LoginVC.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		98822C091EB76B8D008953C2 /* ActiveApp */ = {
+			isa = PBXGroup;
+			children = (
+				98AD91451EA3537B008696A0 /* SettingsVC.swift */,
+				98E84D591E74065B00F0A110 /* DialogVC.swift */,
+				98C43F531E866AEB007023A3 /* DialogsVC.swift */,
+				98B0533D1E9503EE00E1602F /* profileVC.swift */,
+				980E9C301E6FDFDE003527E1 /* FriendsVC.swift */,
+				98C720CF1EAC99EB00BDAD18 /* MapsVC.swift */,
+				980E9C2E1E6FC6D1003527E1 /* LentaVC.swift */,
+			);
+			name = ActiveApp;
+			sourceTree = "<group>";
+		};
+		98822C0C1EB7953A008953C2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				98946AFC1EB4C7EF00625614 /* Entity.swift */,
+				98946AF21EB4A02D00625614 /* WallPost.swift */,
+				989F97AC1EB359F5004DC85B /* Person.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		98822C0E1EB79557008953C2 /* Loaders */ = {
+			isa = PBXGroup;
+			children = (
+				98822C0A1EB7873F008953C2 /* LoaderDelegate.swift */,
+				98822C0F1EB7957E008953C2 /* Loader.swift */,
+				98822C111EB79597008953C2 /* WallPostLoaders.swift */,
+			);
+			name = Loaders;
+			sourceTree = "<group>";
+		};
 		98946AF11EB49F4500625614 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,13 +286,8 @@
 		98946B031EB4D4B300625614 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				98AD91451EA3537B008696A0 /* SettingsVC.swift */,
-				98E84D591E74065B00F0A110 /* DialogVC.swift */,
-				98C43F531E866AEB007023A3 /* DialogsVC.swift */,
-				98B0533D1E9503EE00E1602F /* profileVC.swift */,
-				980E9C301E6FDFDE003527E1 /* FriendsVC.swift */,
-				98C720CF1EAC99EB00BDAD18 /* MapsVC.swift */,
-				980E9C2E1E6FC6D1003527E1 /* LentaVC.swift */,
+				98822C091EB76B8D008953C2 /* ActiveApp */,
+				98822C081EB76B75008953C2 /* Login */,
 				98405E3A1EB5E87700639873 /* Registration */,
 			);
 			name = ViewControllers;
@@ -299,16 +341,15 @@
 			name = Networking;
 			sourceTree = "<group>";
 		};
-		989F97AB1EB359AD004DC85B /* Entities */ = {
+		989F97AB1EB359AD004DC85B /* DataStorage */ = {
 			isa = PBXGroup;
 			children = (
+				98822C0E1EB79557008953C2 /* Loaders */,
+				98822C0C1EB7953A008953C2 /* Entities */,
 				98946AFE1EB4C86000625614 /* Storages */,
-				98946AFC1EB4C7EF00625614 /* Entity.swift */,
-				98946AF21EB4A02D00625614 /* WallPost.swift */,
-				989F97AC1EB359F5004DC85B /* Person.swift */,
 				98946AF81EB4B6D900625614 /* ObjectLoaderDelegateswift */,
 			);
-			name = Entities;
+			name = DataStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,6 +494,7 @@
 				980E9C2F1E6FC6D1003527E1 /* LentaVC.swift in Sources */,
 				98476A461E72B5EB00E7CE3B /* 5FreindsCell.swift in Sources */,
 				98405E391EB5E10200639873 /* Registrator.swift in Sources */,
+				98822C101EB7957E008953C2 /* Loader.swift in Sources */,
 				98D7960E1E793BE6004EBA50 /* pageViewController.swift in Sources */,
 				98AD91461EA3537B008696A0 /* SettingsVC.swift in Sources */,
 				98B0533E1E9503EE00E1602F /* profileVC.swift in Sources */,
@@ -461,6 +503,7 @@
 				98B6B5A91E8C154100E220D3 /* FriendsSwipe.swift in Sources */,
 				98946AFD1EB4C7EF00625614 /* Entity.swift in Sources */,
 				989F97A61EB34EDD004DC85B /* ImageViewExtension.swift in Sources */,
+				98822C0B1EB7873F008953C2 /* LoaderDelegate.swift in Sources */,
 				98946AF31EB4A02D00625614 /* WallPost.swift in Sources */,
 				98476A441E72B36F00E7CE3B /* AvatarImage.swift in Sources */,
 				98C720D01EAC99EB00BDAD18 /* MapsVC.swift in Sources */,
@@ -481,6 +524,7 @@
 				98B6B5AD1E8C2B6500E220D3 /* TBC.swift in Sources */,
 				98FBA5D51E8A92FB00C827C5 /* DialogCell.swift in Sources */,
 				98476A421E72AF8B00E7CE3B /* cellFriend.swift in Sources */,
+				98822C121EB79597008953C2 /* WallPostLoaders.swift in Sources */,
 				98405E461EB5EA0E00639873 /* MailInputVC.swift in Sources */,
 				98405E3C1EB5E8C800639873 /* PhoneCodeInputVC.swift in Sources */,
 				980E9C311E6FDFDE003527E1 /* FriendsVC.swift in Sources */,

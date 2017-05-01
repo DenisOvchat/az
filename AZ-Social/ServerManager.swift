@@ -37,7 +37,7 @@ class ServerManager
             
             }.resume()
     }
-    func sharedInstance(named:String)->ServerManager?
+    static func shared(named:String)->ServerManager?
     {
         return ServerManager.instances[named]
     }

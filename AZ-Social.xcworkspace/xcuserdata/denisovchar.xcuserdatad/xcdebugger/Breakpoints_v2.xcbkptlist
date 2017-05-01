@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AZ-Social/profileVC.swift"
-            timestampString = "513605325.024545"
+            timestampString = "515337306.180763"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AZ-Social/profileVC.swift"
-            timestampString = "513605325.024545"
+            timestampString = "515337306.180763"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -346,7 +346,7 @@
                   moduleName = "AZ-Social"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/denisovchar/Documents/AZ-Social/AZ-Social/Entity.swift"
-                  timestampString = "515242362.837372"
+                  timestampString = "515337308.733208"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -361,7 +361,7 @@
                   moduleName = "AZ-Social"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/denisovchar/Documents/AZ-Social/AZ-Social/Entity.swift"
-                  timestampString = "515242362.840172"
+                  timestampString = "515337308.736788"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -376,7 +376,7 @@
                   moduleName = "AZ-Social"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/denisovchar/Documents/AZ-Social/AZ-Social/Entity.swift"
-                  timestampString = "515242362.842884"
+                  timestampString = "515337308.739484"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
@@ -391,7 +391,7 @@
                   moduleName = "AZ-Social"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/denisovchar/Documents/AZ-Social/AZ-Social/Entity.swift"
-                  timestampString = "515242362.845676"
+                  timestampString = "515337308.742544"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -408,11 +408,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AZ-Social/EntityStorage.swift"
-            timestampString = "515181620.365377"
+            timestampString = "515337306.180763"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "EntitiesStorage"
             landmarkType = "3">
          </BreakpointContent>
@@ -430,6 +430,38 @@
             startingLineNumber = "93"
             endingLineNumber = "93"
             landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AZ-Social/LentaVC.swift"
+            timestampString = "515328621.803744"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "LentaVC"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AZ-Social/profileVC.swift"
+            timestampString = "515330690.974211"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

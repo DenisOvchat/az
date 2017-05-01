@@ -20,7 +20,10 @@ class profileVC:UIViewController,UITableViewDelegate,UITableViewDataSource
     var fiveFriends = [Friend]()
     
     
-    
+    override func viewDidLoad() {
+        
+        
+    }
     override func loadView() {
        super.loadView()
         

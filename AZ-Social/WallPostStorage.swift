@@ -7,21 +7,12 @@
 //
 
 import Foundation
-class WallPostStorage:EntitiesStorage,EntityStorageDelegate
+class WallPostStorage:EntitiesStorage
 {
-    let postfix = "dfgdfgdfgd"
-    
-    func load()
-    {
-        
+
+    init() {
+        super.init(entitiesArray: [WallPost]())
     }
-    func reload()
-    {
-        
-    }
-    func gotData(data:Data)
-    {
-        
-    }
-    
 }
+
+

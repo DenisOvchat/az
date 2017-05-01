@@ -8,37 +8,31 @@
 
 import Foundation
 import UIKit
-protocol EntityStorageDelegate {
-    func load()
-    
-    
-}
-
-
-
-
-
-/*class classicTableDataSourceAndDelegate:UITableViewDataSource
-{
-    
-    init(tableView:UITableView,entitiesStorage:EntitiesStorage)
-    {
-        
-    }
-}
-*/
-
-
 
 class EntitiesStorage
 {
-    private var entitiesDictionary = [Int:Entity]()
-    private var entitiesArray = [Entity]()
     
+    private var entitiesArray:[Entity]
+    private var loaders = [String:Loader]()
     var isLoadingNewElements:Bool = false
     
-    var delegate:EntityStorageDelegate?
-    
+    var dispatchQeeue:DispatchQueue?
+    init(entitiesArray:[Entity])
+    {
+        self.entitiesArray = entitiesArray
+    }
+    func assignLoader(named:String,loader:Loader)->Bool
+    {
+        if(loaders[named] == nil){
+            loader.assignArray(array: entitiesArray)
+            loaders[named] = loader
+            return true
+        }
+        else
+        {
+            return false
+        }
+    }
     
     var count:Int
     {
@@ -49,12 +43,6 @@ class EntitiesStorage
     }
     
     
-    
-    
-    func loadMore(count:Int)
-    {
-        
-    }
     
     func SwapElements()
     {
@@ -69,16 +57,12 @@ class EntitiesStorage
      
     }
     
-    func elementBy(id:Int)->Entity?
+    func deleteElementsAt(indexes:Int)
     {
-        return entitiesDictionary[id]
+        
     }
     
-    func add(element:Entity,by id:Int)
-    {
-        //entitiesArray.append(element)
-        //entitiesDictionary.
-    }
+    
     
     
     

@@ -11,6 +11,10 @@ class FromInputVC:UIViewController
 {
     var pgCont:UIPageControl!
     var rigistrationData:[String:Any]!
+    
+    @IBOutlet weak var countryField: UITextField!
+    @IBOutlet weak var cityField: UITextField!
+    
     override func viewDidLoad() {
         
     }
@@ -19,6 +23,9 @@ class FromInputVC:UIViewController
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        rigistrationData["county"] = countryField.text
+        rigistrationData["city"] = cityField.text
+
         (segue.destination as! PhotoInputVC).pgCont = pgCont
         (segue.destination as! PhotoInputVC).rigistrationData = rigistrationData
 
