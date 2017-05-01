@@ -11,8 +11,8 @@ import Foundation
 class WallPostLoaderFromServer:Loader
 {
     var serverManager:ServerManager!
-    init(serverManager:ServerManager) {
-        super.init(array: array, delegate: delegate)
+    init(named:String,with serverManager:ServerManager,qos:DispatchQoS) {
+        super.init(named: named,qos:qos)
         self.serverManager = serverManager
     }
     

@@ -12,8 +12,9 @@ class Loader {
     var delegate:LoaderDelegate!
     private var name:String
     var queue:DispatchQueue?
-    init(named:String) {
+    init(named:String,qos:DispatchQoS) {
         name = named
+        queue = DispatchQueue(label: named, qos: qos)
     }
     func assignArray(array:[Entity])
     {

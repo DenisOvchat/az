@@ -12,32 +12,30 @@ class LentaVC:UIViewController,UITableViewDataSource,UITableViewDelegate,LoaderD
 {
     var postsStorage = WallPostStorage()
     var isLoadingNewInTable = false
-    var postsLoader:NewsLoaderFromServer!
+    var postsLoader:WallPostLoaderFromServer!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     
      override func loadView() {
         super.loadView()
         
         
-        postsLoader = NewsLoaderFromServer(serverManager: ServerManager.shared(named: "main")!)
+        postsLoader = WallPostLoaderFromServer(named: "newsServerLoader", with: ServerManager.shared(named: "main")!, qos: .userInteractive)
         postsLoader.delegate = self
         postsStorage.assignLoader(named: "postsFromServer", loader: postsLoader)
-        
-        
-        
-        
-        
         
         
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "wallPostCell") as! postCell
+        cell.post = postsStorage[indexPath.row] as! WallPost
+
         
         
-        
-        
-        
-        if (indexPath.row ==  postsStorage.count-10) {
+        if (indexPath.section ==  postsStorage.count-10) {
             print("schould load more")
             postsLoader.loadMoreToTheEnd(count: 10)
         }
@@ -46,7 +44,7 @@ class LentaVC:UIViewController,UITableViewDataSource,UITableViewDelegate,LoaderD
     }
  
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return postsStorage.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
