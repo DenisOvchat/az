@@ -12,6 +12,8 @@ class LoginVC:UIViewController
 {
     let data = (UIApplication.shared.delegate as! AppDelegate).data
     
+    @IBOutlet weak var loginField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     override func loadView() {
         super.loadView()
         
@@ -24,7 +26,7 @@ class LoginVC:UIViewController
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        let loged:Bool=true
+        let loged:Bool=false
         if loged
         {
             performSegue(withIdentifier: "toApp", sender: nil)
@@ -37,6 +39,15 @@ class LoginVC:UIViewController
         
     }
     
+    @IBAction func logingAction(_ sender: Any) {
+        
+        
+        let data = ["email":loginField.text,"password":passwordField.text]
+        
+        ServerManager.shared(named: "main")?.POSTJSONRequestByAdding(postfix: "/persons/sign_in", data: data, complititionHandler: nil)
+
+        
+    }
     
     
 }

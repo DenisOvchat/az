@@ -10,14 +10,12 @@ import UIKit
 class PhoneCodeInputVC:UIViewController,UITextFieldDelegate
 {
     @IBOutlet weak var field: UITextField!
-    var pgCont:UIPageControl!
     var rigistrationData:[String:Any] = [String:Any]()
     override func viewDidLoad() {
         field.keyboardType = .decimalPad
         field.delegate =  self
     }
     override func viewWillAppear(_ animated: Bool) {
-        pgCont.currentPage = 1
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
@@ -43,9 +41,22 @@ class PhoneCodeInputVC:UIViewController,UITextFieldDelegate
                 
                 return (newLength > 4) ? false : true
             }
-            if((length==10))
+            if((length==4))
             {
+                
+                
+
+                
+                let email = rigistrationData["email"]
+                
+                var data:[String:Any] = ["email": email, "code" :  decimalString]
+                
+                rigistrationData["code"] = decimalString
+
+                
+                ServerManager.shared(named: "main")?.POSTJSONRequestByAdding(postfix: "/persons/verification", data: data, complititionHandler: nil)
                 field.resignFirstResponder()
+                
             }
             var index = 0 as Int
             let formattedString = NSMutableString()
@@ -90,8 +101,6 @@ class PhoneCodeInputVC:UIViewController,UITextFieldDelegate
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        rigistrationData["phone"] = field.text
-        (segue.destination as! NameInputVC).pgCont = pgCont
         (segue.destination as! NameInputVC).rigistrationData = rigistrationData
 
     }

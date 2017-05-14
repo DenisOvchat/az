@@ -7,12 +7,12 @@
 //
 
 import Foundation
-protocol LoaderDelegate {
-    func didLoadEntitiesToTheEnd(Amount:Int)
+@objc protocol LoaderDelegate {
+    @objc optional func didLoadEntitiesToTheEnd(Amount:Int)
     
-    func didLoadEntitiesToTheStart(Amount:Int)
-    func didReloadEntities(indexes:[Int])
-    func didDeleteEntities(indexes:[Int])
-    func didAddEntities(indexes:[Int])
+    @objc optional func didLoadEntitiesToTheStart(Amount:Int)
+    @objc optional func didReloadEntities(indexes:[Int])
+    @objc optional func didDeleteEntities(indexes:[Int])
+    @objc optional func didAddEntities(indexes:[Int])
     
 }

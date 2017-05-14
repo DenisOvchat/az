@@ -9,7 +9,7 @@
 import Foundation
 import  UIKit
 
-class frPreSwipe:UIViewController
+class FriendsPagesContainer:UIViewController
 {
     override func viewDidLoad() {
         

@@ -9,7 +9,6 @@
 import UIKit
 class FromInputVC:UIViewController
 {
-    var pgCont:UIPageControl!
     var rigistrationData:[String:Any]!
     
     @IBOutlet weak var countryField: UITextField!
@@ -19,16 +18,17 @@ class FromInputVC:UIViewController
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        pgCont.currentPage = 4
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        rigistrationData["county"] = countryField.text
+        rigistrationData["country"] = countryField.text
         rigistrationData["city"] = cityField.text
+        
+        ServerManager.shared(named: "main")?.POSTJSONRequestByAdding(postfix: "/persons/sign_up", data: rigistrationData, complititionHandler: nil)
 
-        (segue.destination as! PhotoInputVC).pgCont = pgCont
+        
         (segue.destination as! PhotoInputVC).rigistrationData = rigistrationData
-
+        
     }
     
 }

@@ -10,7 +10,7 @@ import Foundation
 import TRMosaicLayout
 
 import UIKit
-class postCell:UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSource,TRMosaicLayoutDelegate
+class postCell:UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSource
 {
     
     @IBOutlet weak var avat: AvatarImage!
@@ -22,6 +22,9 @@ class postCell:UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSour
     
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    
+    var collectionSizes=[CGSize]()
     
     var post:WallPost!
     {
@@ -72,7 +75,9 @@ class postCell:UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSour
             
             if post.pictureUrls != nil
             {
-                
+                collectionView.delegate = self
+                collectionView.dataSource = self
+                collectionView.reloadData()
                 
             }
             else
@@ -84,16 +89,24 @@ class postCell:UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSour
             }
             
             
-            //  89662788169
-           
-            let mosaicLayout = TRMosaicLayout()
-            collectionView.collectionViewLayout = mosaicLayout
-            mosaicLayout.delegate = self
+            let width = UIScreen.main.bounds.width
+            
+            if  (post.pictureSizes?[0].IsHorizontal())!
+            {
+                collectionSizes.append(CGSize(width: width - 10 , height:  (post.pictureSizes?[0].height(for: width))!))
+            }
+            else
+            {
+                
+            }
             
             
-            collectionView.delegate = self
-            collectionView.dataSource = self
-            collectionView.reloadData()
+            
+            
+            
+            
+            
+            
             //collectionView.flow
             //collectionView.setsize
             //let layout = UICollectionViewFlowLayout()
@@ -119,22 +132,35 @@ class postCell:UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSour
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return post.pictureUrls!.count
+    }
+    /*
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //2
+        let width = UIScreen.main.bounds.width
+        let size = post.pictureSizes?[indexPath.row]
+        
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
     }
     
-    
-    func collectionView(_ collectionView:UICollectionView, mosaicCellSizeTypeAtIndexPath indexPath:IndexPath) -> TRMosaicCellType {
-        // I recommend setting every third cell as .Big to get the best layout
-        return indexPath.item % 3 == 0 ? TRMosaicCellType.big : TRMosaicCellType.small
+    //3
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
     }
     
-    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout: TRMosaicLayout, insetAtSection:Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
+    // 4
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInsets.left
     }
+    */
     
-    func heightForSmallMosaicCell() -> CGFloat {
-        return 150
-    }
     
     
     

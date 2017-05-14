@@ -9,13 +9,11 @@
 import UIKit
 class PhotoInputVC:UIViewController
 {
-    var pgCont:UIPageControl!
     var rigistrationData:[String:Any]!
     override func viewDidLoad() {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        pgCont.currentPage = 5
     }
     
     

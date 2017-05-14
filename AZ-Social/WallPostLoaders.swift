@@ -16,17 +16,19 @@ class WallPostLoaderFromServer:Loader
         self.serverManager = serverManager
     }
     
-    func loadMoreToTheStart(count:Int)
+    func load(count:Int)
     {
         
     }
     func loadMoreToTheEnd(count:Int)
     {
-        
-        
-        
-        delegate?.didLoadEntitiesToTheEnd(Amount: count)
+        delegate?.didLoadEntitiesToTheEnd!(Amount: count)
     }
+    
+    
+    
+    
+    
 }
 class WallPostLoaderFromDatabase:Loader
 {
@@ -34,9 +36,4 @@ class WallPostLoaderFromDatabase:Loader
         
     }
 }
-class WallPostLoaderFromGeor:Loader
-{
-    func loadMore(count:Int) {
-        
-    }
-}
+

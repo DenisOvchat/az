@@ -56,7 +56,7 @@ class ServerManager
         return serverDomain
     }
     
-    func POSTJSONRequestByAdding(postfix:String,data:[String:Any],complititionHandler: @escaping (Data?) -> Void)
+    func POSTJSONRequestByAdding(postfix:String,data:[String:Any],complititionHandler: ((Data?) -> Void)?)
     {
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
@@ -66,17 +66,40 @@ class ServerManager
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
-        
+       
         do {
             let postData = try JSONSerialization.data(withJSONObject: data, options:JSONSerialization.WritingOptions.prettyPrinted)
             request.httpBody = postData
             
             let postDataTask = session.dataTask(with: request as URLRequest) { (data:Data?, response:URLResponse?, error:Error?) -> Void in
                 
-                if data != nil {
-                        complititionHandler(data)
+                print("___________________")
+                print("RECV:")
+                if (response != nil)
+                {
+                    print (response)
+
                 }
+                if (data != nil)
+                {
+                    print("WITHDATA:")
+                    print(print (NSString(data: data!, encoding: String.Encoding.utf8.rawValue)))
+                    
+                }
+                
+                print("++++++++++++++++++++")
+                
+                if data != nil && complititionHandler != nil {
+                        complititionHandler!(data)
+                }
+                
             }
+            print("___________________\n")
+            print("SEND:")
+            print(request.url)
+            print(request.allHTTPHeaderFields)
+            
+            print (NSString(data: request.httpBody!, encoding: String.Encoding.utf8.rawValue))
             postDataTask.resume()
             
         } catch { }

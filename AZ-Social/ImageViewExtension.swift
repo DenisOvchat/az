@@ -29,3 +29,20 @@ extension UIImageView {
         downloadedFrom(url: url, contentMode: mode)
     }
 }
+
+extension CGSize
+{
+    func IsHorizontal()->Bool
+    {
+        return width > height
+    }
+    
+    func height(for width: CGFloat)->CGFloat
+    {
+        return height * width/self.width
+    }
+    func width(for height: CGFloat)->CGFloat
+    {
+        return width * height/self.height
+    }
+}

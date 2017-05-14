@@ -12,7 +12,9 @@ import SwipeViewController
 
 class Controller: SwipeViewController {
     
+   
     override func viewDidLoad() {
+        //self.navigationBar.frame = CGRect(x: 0, y: 0, width: navigationBar.frame.width , height: 88)
         super.viewDidLoad()
         let stb = UIStoryboard(name: "Main", bundle: nil)
         
@@ -40,10 +42,17 @@ class Controller: SwipeViewController {
 
         setSelectionBar(screenSize.width / 2 - 30, height: 3, color:  UIColor(red: 0, green: 148, blue: 176, al: 1)
 )
+        
+        
 
 
     }
+   
+    
+    
+    
     
     
     
 }
+

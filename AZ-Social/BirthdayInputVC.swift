@@ -15,7 +15,6 @@ class BirthdayInputVC:UIViewController
     @IBOutlet weak var femaleButton: UIButton!
     
     
-    var pgCont:UIPageControl!
     var rigistrationData:[String:Any]!
     override func viewDidLoad() {
         picker.datePickerMode = .date
@@ -26,11 +25,14 @@ class BirthdayInputVC:UIViewController
         femaleButton.isHighlighted = true
     }
     override func viewWillAppear(_ animated: Bool) {
-        pgCont.currentPage = 3
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        rigistrationData["birth_day"] = picker.date.timeIntervalSince1970
-        (segue.destination as! FromInputVC).pgCont = pgCont
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY-MM-dd"
+        let dateString = formatter.string(from: picker.date)
+        rigistrationData["birthday"] = dateString
+        
         (segue.destination as! FromInputVC).rigistrationData = rigistrationData
         
     }
@@ -47,14 +49,14 @@ class BirthdayInputVC:UIViewController
         maleButton.isHighlighted = false
         
         femaleButton.isHighlighted = true
-        rigistrationData["gender"] = "Male"
+        rigistrationData["sex"] = true
 
     }
    
     @IBAction func femaleBut(_ sender: Any) {
         maleButton.isHighlighted = true
         femaleButton.isHighlighted = false
-        rigistrationData["gender"] = "Female"
+        rigistrationData["sex"] = false
     }
     
 }

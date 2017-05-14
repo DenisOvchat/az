@@ -34,12 +34,12 @@ class FriendsVC:UIViewController,UITableViewDelegate,UITableViewDataSource,UISea
     override func loadView() {
         super.loadView()
         friends["Частые"] = [Friend]()
-        friends["Частые"]?.append(Friend(name: "Василиса\(1)", secondName: "Ракина", pictUrl: "http://cs424418.vk.me/v424418528/95ee/jzw8cB8KvZc.jpg", isOnline: true, id: 3))
+        friends["Частые"]?.append(Friend(name: "джобс\(1)", secondName: "неджобс", pictUrl: "https://st.kp.yandex.net/images/actor_iphone/iphone360_93826.jpg", isOnline: true, id: 3))
         friends["A"] = [Friend]()
 
         for i in 0...10
         {
-            let fr = Friend(name: "Василиса\(i)", secondName: "Ракина", pictUrl: "http://cs424418.vk.me/v424418528/95ee/jzw8cB8KvZc.jpg", isOnline: true, id: i)
+            let fr = Friend(name: "стив\(i)", secondName: "жопн", pictUrl: "https://st.kp.yandex.net/images/actor_iphone/iphone360_93826.jpg", isOnline: true, id: i)
             friends["A"]?.append(fr)
             fiveFriends.append(fr)
             for j in 0...25
@@ -174,8 +174,9 @@ class FriendsVC:UIViewController,UITableViewDelegate,UITableViewDataSource,UISea
         super.viewWillAppear(animated)
         //navigationController?.hidesBarsOnSwipe = true
         
-        navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: navigationController!.navigationBar.frame.width , height: 88)
+    //    navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: navigationController!.navigationBar.frame.width , height: 88)
         navigationController?.navigationBar.barTintColor = UIColor.green
+        
        /* UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions.beginFromCurrentState
             , animations: {
                 self.navigationController?.navigationBar.barTintColor = UIColor(netHex: 0x00bed4)

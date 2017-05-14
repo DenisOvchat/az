@@ -10,7 +10,6 @@ import UIKit
 class MailInputVC:UIViewController,UITextFieldDelegate
 {
     @IBOutlet weak var field: UITextField!
-    var pgCont:UIPageControl!
     var rigistrationData:[String:Any] = [String:Any]()
 
     override func viewDidLoad() {
@@ -18,13 +17,12 @@ class MailInputVC:UIViewController,UITextFieldDelegate
         field.delegate =  self
     }
     override func viewWillAppear(_ animated: Bool) {
-        pgCont.currentPage = 1
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
         if (textField == field)
         {
-            var rng=range
+            /*var rng=range
             /* if string == "" && Int((textField.text! as NSString).character(at: range.location)) == nil && range.location > 0
              {
              rng = NSMakeRange(range.location - 1, range.length)
@@ -37,6 +35,9 @@ class MailInputVC:UIViewController,UITextFieldDelegate
             let length = decimalString.length
             let hasLeadingOne = length > 0 && decimalString.character(at: 0) == (1 as unichar)
             
+            
+            
+            
             if length == 0 || (length > 4 && !hasLeadingOne) || length > 5
             {
                 let newLength = (textField.text! as NSString).length + (string as NSString).length - rng.length as Int
@@ -44,10 +45,7 @@ class MailInputVC:UIViewController,UITextFieldDelegate
                 
                 return (newLength > 4) ? false : true
             }
-            if((length==10))
-            {
-                field.resignFirstResponder()
-            }
+            
             var index = 0 as Int
             let formattedString = NSMutableString()
             
@@ -81,8 +79,8 @@ class MailInputVC:UIViewController,UITextFieldDelegate
             
             let remainder = decimalString.substring(from: index)
             formattedString.append(remainder)
-            textField.text = formattedString as String
-            return false
+            textField.text = formattedString as String*/
+            return true
         }
         else
         {
@@ -91,7 +89,13 @@ class MailInputVC:UIViewController,UITextFieldDelegate
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        (segue.destination as! NameInputVC).pgCont = pgCont
+        
+        let data = ["email":field.text]
+        
+        
+        ServerManager.shared(named: "main")?.POSTJSONRequestByAdding(postfix: "/persons/verification", data: data, complititionHandler: nil)
+        rigistrationData["email"] = field.text
+
     }
     
 }

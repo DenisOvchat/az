@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        ServerManager.addServerManager(named:"main",domain:"http://188.225.38.189:8000")
+               
+        ServerManager.addServerManager(named:"main",domain:"http://188.225.38.189")
         // Override point for customization after application launch.
        /* let pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         let navigationController = Controller(rootViewController: pageController)

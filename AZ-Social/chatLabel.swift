@@ -8,7 +8,7 @@
 
 import Foundation
 import  UIKit
-class chatLabel:UILabel
+/*class chatLabel:UILabel
 {
     override func drawText(in rect: CGRect) {
         let ins = UIEdgeInsets(top: 100, left: 150, bottom: 100, right: 15)
@@ -16,3 +16,4 @@ class chatLabel:UILabel
         super.drawText(in: UIEdgeInsetsInsetRect(rect, ins))
     }
 }
+*/
