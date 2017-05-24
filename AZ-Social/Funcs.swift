@@ -25,7 +25,7 @@ class ProgramData
         myProfile = FullProfile(mine: true, name: "denis", secondName: "offchar", pictUrl: "http://i.ucrazy.ru/files/pics/2015.03/1427726601_anypics.ru-65214.jpg", isOnline: true, id: 0)
         myProfile.BirhDay = Date(timeIntervalSince1970: 100000)
         myProfile.WhereFrom = "Москва"
-        myProfile.topImageUrl = "https://www.firestock.ru/wp-content/uploads/2015/11/Dollar-Photo-Club-Teal-Square-Background-700x393.jpg"
+        myProfile.topImageUrl = "http://i.ucrazy.ru/files/pics/2015.03/1427726601_anypics.ru-65214.jpg"
         //termsP = UnsafePointer < [String:[Term]] >(&terms)
         //alphabetP = UnsafePointer < [String] >(&alphabet)
     }

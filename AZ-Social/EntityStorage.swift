@@ -13,6 +13,7 @@ class EntitiesStorage
 {
     
     private var entitiesArray:[Entity]
+    
     private var loaders = [String:Loader]()
     var isLoadingNewElements:Bool = false
     

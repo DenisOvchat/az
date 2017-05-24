@@ -27,16 +27,6 @@ class ChooseRegistrationWay:UIViewController
         
     }
     
-    @IBAction func phoneAction(_ sender: Any) {
-        let initialVC = storyboard?.instantiateViewController(withIdentifier: "phoneInput")
-        registrationNavigationController.addChildViewController(initialVC!)
-        show(registrationNavigationController, sender: nil)
-    }
-    @IBAction func mailAction(_ sender: Any) {
-        
-        let initialVC = storyboard?.instantiateViewController(withIdentifier: "mailInput")
-        registrationNavigationController.addChildViewController(initialVC!)
-        show(registrationNavigationController, sender: nil)
-    }
+    
     
 }

@@ -10,28 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AZ-Social/ServerManager.swift"
-            timestampString = "516288055.931282"
+            timestampString = "517319242.578663"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "POSTJSONRequestByAdding(postfix:data:complititionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AZ-Social/ServerManager.swift"
-            timestampString = "516288055.931282"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "POSTJSONRequestByAdding(postfix:data:complititionHandler:)"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "POSTJSONRequestByAdding(postfix:data:complititionHandler:withCookies:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -170,7 +154,7 @@
                   moduleName = "SwipeViewController"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/denisovchar/Documents/AZ-Social/Pods/SwipeViewController/Pod/Classes/SwipeViewController.swift"
-                  timestampString = "516403730.341163"
+                  timestampString = "517328291.784962"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "405"
@@ -185,7 +169,7 @@
                   moduleName = "SwipeViewController"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/denisovchar/Documents/AZ-Social/Pods/SwipeViewController/Pod/Classes/SwipeViewController.swift"
-                  timestampString = "516403730.343772"
+                  timestampString = "517328291.788584"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "406"
@@ -193,6 +177,54 @@
                   offsetFromSymbolStart = "19">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AZ-Social/AppDelegate.swift"
+            timestampString = "517316579.129065"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AZ-Social/AppDelegate.swift"
+            timestampString = "517316579.129065"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AZ-Social/RegistrationNavigationC.swift"
+            timestampString = "517329303.202272"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -20,22 +20,72 @@ class ServerManager
     
     
     
-    func GETRequestByAdding(postfix:String,complititionHandler: @escaping (Data?) -> Void)
+    func GETRequestByAdding(postfix:String,complititionHandler: ((Data?,URLResponse? ,Error? ) -> Void)?,withCookies:Bool = false)
     {
-        let urlString = serverDomain + postfix
         
-        let url = URL(string: urlString)
-        URLSession.shared.dataTask(with:url!) { (data, response, error) in
-            if error != nil {
+            let configuration = URLSessionConfiguration.default
+            let session = URLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
+            
+            
+            let url = NSURL(string: serverDomain + postfix)
+            
+            let request = NSMutableURLRequest(url: url! as URL, cachePolicy: NSURLRequest.CachePolicy.useProtocolCachePolicy, timeoutInterval: 60)
+            
+            if withCookies
+            {
+                let cookieJar = HTTPCookieStorage.shared
+                let d = cookieJar.cookies(for:         URL(string: "http://188.225.38.189")!
+                )
+                for cookie in d!{
+                    
+                    
+                    request.addValue(cookie.name + " = " + cookie.value, forHTTPHeaderField: "Cookie")
+                }
                 
-                print(error)
-            } else {
                 
-                complititionHandler(data)
+                
+                
                 
             }
             
-            }.resume()
+            request.httpMethod = "GET"
+            
+            do {
+                let postDataTask = session.dataTask(with: request as URLRequest) { (data:Data?, response:URLResponse?, error:Error?) -> Void in
+                    
+                    
+                    print("___________________")
+                    print("RECV:")
+                    if (response != nil)
+                    {
+                        print (response)
+                        
+                    }
+                    if (data != nil)
+                    {
+                        print("WITHDATA:")
+                        print(print (NSString(data: data!, encoding: String.Encoding.utf8.rawValue)))
+                        
+                    }
+                    
+                    print("++++++++++++++++++++")
+                    
+                    if  complititionHandler != nil {
+                        complititionHandler!(data,response,error)
+                        
+                    }
+                    
+                }
+                print("___________________\n")
+                print("SEND:")
+                print(request.url)
+                print(request.allHTTPHeaderFields)
+                
+                //print (NSString(data: request.httpBody!, encoding: String.Encoding.utf8.rawValue))
+                postDataTask.resume()
+                
+            } catch { }
+        
     }
     static func shared(named:String)->ServerManager?
     {
@@ -56,13 +106,41 @@ class ServerManager
         return serverDomain
     }
     
-    func POSTJSONRequestByAdding(postfix:String,data:[String:Any],complititionHandler: ((Data?) -> Void)?)
+    func POSTJSONRequestByAdding(postfix:String,data:[String:Any],complititionHandler: ((Data?,URLResponse? ,Error? ) -> Void)?,withCookies:Bool = false)
     {
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
         
+        
         let url = NSURL(string: serverDomain + postfix)
+        
         let request = NSMutableURLRequest(url: url! as URL, cachePolicy: NSURLRequest.CachePolicy.useProtocolCachePolicy, timeoutInterval: 60)
+        
+        if withCookies
+        {
+            let cookieJar = HTTPCookieStorage.shared
+            let d = cookieJar.cookies(for:         URL(string: "http://188.225.38.189")!
+            )
+            for cookie in d!{
+                
+                // if cookie.name == "MYNAME" {
+                
+                let cookieValue = cookie.value
+                print("COOKIE name = \(cookie.commentURL)")
+                
+                print("COOKIE name = \(cookie.name)")
+                
+                print("COOKIE VALUE = \(cookieValue)")
+                // }
+                request.addValue(cookie.name + " = " + cookie.value, forHTTPHeaderField: "Cookie")
+            }
+            
+            
+            
+            
+            
+        }
+        
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
@@ -73,6 +151,7 @@ class ServerManager
             
             let postDataTask = session.dataTask(with: request as URLRequest) { (data:Data?, response:URLResponse?, error:Error?) -> Void in
                 
+
                 print("___________________")
                 print("RECV:")
                 if (response != nil)
@@ -89,8 +168,9 @@ class ServerManager
                 
                 print("++++++++++++++++++++")
                 
-                if data != nil && complititionHandler != nil {
-                        complititionHandler!(data)
+                if  complititionHandler != nil {
+                    complititionHandler!(data,response,error)
+
                 }
                 
             }

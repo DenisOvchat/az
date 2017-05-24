@@ -20,7 +20,8 @@ class RegistrationNavigationC:UINavigationController,UINavigationControllerDeleg
         self.delegate = self
         
         pageControl.numberOfPages = 6
-        
+        pageControl.isHidden = true
+
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         // Sets shadow (line below the bar) to a blank image
         UINavigationBar.appearance().shadowImage = UIImage()
@@ -38,17 +39,40 @@ class RegistrationNavigationC:UINavigationController,UINavigationControllerDeleg
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
+        
         if operation == .pop
         {
-            pageControl.currentPage -= 1
+            if self.viewControllers.count == 2
+            {
+                pageControl.isHidden = true
+            }
+            else
+            {
+
+            }
+            if self.viewControllers.count >= 3
+            {
+                pageControl.currentPage -= 1
+
+            }
 
         }
         
         
         if operation == .push
         {
-            pageControl.currentPage += 1
-            
+            if self.viewControllers.count == 3
+            {
+                pageControl.isHidden = false
+
+            }
+                
+            if self.viewControllers.count >= 4
+            {
+                pageControl.currentPage += 1
+                
+            }
+
         }
         return RegistrationTransition()
     }

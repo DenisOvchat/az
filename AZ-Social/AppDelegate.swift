@@ -19,6 +19,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
                
         ServerManager.addServerManager(named:"main",domain:"http://188.225.38.189")
+        
+        let cookieJar = HTTPCookieStorage.shared
+        let d = cookieJar.cookies(for:         URL(string: "http://188.225.38.189")!
+)
+        for cookie in d!{
+            
+           // if cookie.name == "MYNAME" {
+                
+                let cookieValue = cookie.value
+            print("COOKIE name = \(cookie.commentURL)")
+
+            print("COOKIE name = \(cookie.name)")
+
+                print("COOKIE VALUE = \(cookieValue)")
+           // }
+        }
+        
+        loadHTTPCookies()
+
+     /*
+        let cookiesAreConfigured = methodThatChecksIfTheCookiesAreConfigured()
+        if cookiesAreConfigured == true {
+            let mainStoryboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController : UIViewController = mainStoryboardIpad.instantiateViewControllerWithIdentifier("HomeVC") as HomeVC
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
+        
+        */
+        
         // Override point for customization after application launch.
        /* let pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         let navigationController = Controller(rootViewController: pageController)
@@ -35,11 +66,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
+        saveCookies()
+
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
+        loadHTTPCookies()
+
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }
 
@@ -48,6 +83,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
+        saveCookies()
+
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
@@ -104,5 +141,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
     }
 
+    
+    func loadHTTPCookies() {
+        
+        if let cookieDict = UserDefaults.standard.value(forKey: "cookieArray") as?NSMutableArray {
+            
+            for c in cookieDict {
+                
+                let cookies = UserDefaults.standard.value(forKey: c as!String) as!NSDictionary
+                let cookie = HTTPCookie(properties: cookies as![HTTPCookiePropertyKey: Any])
+                
+                HTTPCookieStorage.shared.setCookie(cookie!)
+            }
+        }
+    }
+    
+    func saveCookies() {
+        
+        let cookieArray = NSMutableArray()
+        if let savedC = HTTPCookieStorage.shared.cookies {
+            for c: HTTPCookie in savedC {
+                
+                let cookieProps = NSMutableDictionary()
+                cookieArray.add(c.name)
+                cookieProps.setValue(c.name, forKey: HTTPCookiePropertyKey.name.rawValue)
+                cookieProps.setValue(c.value, forKey: HTTPCookiePropertyKey.value.rawValue)
+                cookieProps.setValue(c.domain, forKey: HTTPCookiePropertyKey.domain.rawValue)
+                cookieProps.setValue(c.path, forKey: HTTPCookiePropertyKey.path.rawValue)
+                cookieProps.setValue(c.version, forKey: HTTPCookiePropertyKey.version.rawValue)
+                cookieProps.setValue(NSDate().addingTimeInterval(2629743), forKey: HTTPCookiePropertyKey.expires.rawValue)
+                
+                UserDefaults.standard.setValue(cookieProps, forKey: c.name)
+                UserDefaults.standard.synchronize()
+            }
+        }
+        
+        UserDefaults.standard.setValue(cookieArray, forKey: "cookieArray")
+    }
+
+    
 }
 

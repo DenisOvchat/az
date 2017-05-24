@@ -20,9 +20,9 @@ class FriendsVC:UIViewController,UITableViewDelegate,UITableViewDataSource,UISea
     var searchBar:UISearchBar!
     var searchActive : Bool = false
     //var filtered:[String] = []
-    var friends=[String:[Friend]]()
-    var fiveFriends=[Friend]()
-    var friendsFiltered=[String:[Friend]]()
+    var friends=[String:[Person]]()
+    var fiveFriends=[Person]()
+    var friendsFiltered=[String:[Person]]()
     var mode:Int = 0
     var isOpened = false
     
@@ -33,13 +33,13 @@ class FriendsVC:UIViewController,UITableViewDelegate,UITableViewDataSource,UISea
     //var latBigRange:NSRange = "A". ..."Z"
     override func loadView() {
         super.loadView()
-        friends["Частые"] = [Friend]()
-        friends["Частые"]?.append(Friend(name: "джобс\(1)", secondName: "неджобс", pictUrl: "https://st.kp.yandex.net/images/actor_iphone/iphone360_93826.jpg", isOnline: true, id: 3))
-        friends["A"] = [Friend]()
+        friends["Частые"] = [Person]()
+        friends["Частые"]?.append(Person(name: "джобс\(1)", secondName: "неджобс", pictUrl: "https://st.kp.yandex.net/images/actor_iphone/iphone360_93826.jpg", isOnline: true, id: 3))
+        friends["A"] = [Person]()
 
         for i in 0...10
         {
-            let fr = Friend(name: "стив\(i)", secondName: "жопн", pictUrl: "https://st.kp.yandex.net/images/actor_iphone/iphone360_93826.jpg", isOnline: true, id: i)
+            let fr = Person(name: "стив\(i)", secondName: "жопн", pictUrl: "https://st.kp.yandex.net/images/actor_iphone/iphone360_93826.jpg", isOnline: true, id: i)
             friends["A"]?.append(fr)
             fiveFriends.append(fr)
             for j in 0...25

@@ -8,21 +8,50 @@
 
 import Foundation
 import UIKit
-class profileVC:UIViewController,UITableViewDelegate,UITableViewDataSource
+class profileVC:UIViewController,UITableViewDelegate,UITableViewDataSource,LoaderDelegate
 {
     
     @IBOutlet weak var settingsBut: UIBarButtonItem!
 
     @IBOutlet weak var tableView: UITableView!
     
+    var postsStorage = WallPostStorage()
+    var isLoadingNewInTable = false
+    var postsLoader:WallPostLoaderFromServer!
+    
+    
+    
     var profile:FullProfile!
-    var data = (UIApplication.shared.delegate as! AppDelegate).data
-    var fiveFriends = [Friend]()
+    var fiveFriends = [Person]()
     
     
     override func viewDidLoad() {
         
+        profile.postsStorage = postsStorage
+
+        postsLoader = WallPostLoaderFromServer(named: "newsServerLoader", with: ServerManager.shared(named: "main")!, qos: .userInteractive)
+        postsLoader.delegate = self
+        postsStorage.assignLoader(named: "postsFromServer", loader: postsLoader)
         
+        tableView.register(UINib(nibName: "AddPostCell", bundle: Bundle.main), forCellReuseIdentifier: "addPostCell")
+        tableView.register(UINib(nibName: "ProfileMainCell", bundle: Bundle.main), forCellReuseIdentifier: "main")
+        tableView.register(UINib(nibName: "WallPostCellTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "wallPostCell")
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
+
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        ServerManager.shared(named: "main")?.GETRequestByAdding(postfix: "/id15",
+            complititionHandler:  { (data:Data?, response:URLResponse?, error:Error?) in
+            
+            
+            
+        }, withCookies: true)
     }
     override func loadView() {
        super.loadView()
@@ -32,12 +61,11 @@ class profileVC:UIViewController,UITableViewDelegate,UITableViewDataSource
         
         
         
-        
-        profile = data.myProfile
+        profile = (UIApplication.shared.delegate as! AppDelegate).data.myProfile
         
         for i in 0...10
         {
-            let fr = Friend(name: "Стиви\(i)", secondName: "Джобс", pictUrl: "https://st.kp.yandex.net/images/actor_iphone/iphone360_93826.jpg", isOnline: true, id: i)
+            let fr = Person(name: "Стиви\(i)", secondName: "Джобс", pictUrl: "https://st.kp.yandex.net/images/actor_iphone/iphone360_93826.jpg", isOnline: true, id: i)
             profile.friends.append(fr)
             fiveFriends.append(fr)
             for j in 0...25
@@ -58,20 +86,27 @@ class profileVC:UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "main") as! profileMainCell
-            cell.setcell(friend: profile)
+            cell.profile = profile
+            
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "newpost")
-            return UITableViewCell()
             
-        default: return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "addPostCell") as! AddPostCell
+            cell.tableView = tableView
+            return cell
+            
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "wallPostCell") as! postCell
+            cell.post = (postsStorage[indexPath.section - 2] as! WallPost)
+            return cell
+            
             
         }
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+   /* func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
             
@@ -83,13 +118,13 @@ class profileVC:UIViewController,UITableViewDelegate,UITableViewDataSource
         default: return 44
             
         }
-    }
+    }*/
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2 + postsStorage.count
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2 + (profile?.Posts.count)!
+        return 1
     }
     
     

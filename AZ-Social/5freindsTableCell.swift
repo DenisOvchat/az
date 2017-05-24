@@ -14,9 +14,9 @@ class fiveFriendstableCell:UITableViewCell,UICollectionViewDelegate,UICollection
     
     @IBOutlet weak var avat: AvatarImage!
     @IBOutlet weak var name: UILabel!
-    var fiveFriends:[Friend]!
+    var fiveFriends:[Person]!
     @IBOutlet weak var collectionView: UICollectionView!
-    func setcell(friends:[Friend])
+    func setcell(friends:[Person])
     {
         collectionView.delegate = self
         collectionView.dataSource = self

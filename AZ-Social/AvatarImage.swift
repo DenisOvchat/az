@@ -16,6 +16,7 @@ class AvatarImage:UIView
     var imageView = UIImageView()
     func setting(isonline:Bool,radius:CGFloat)
     {
+        backgroundColor = UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0)
         imageView.frame = CGRect(x: 0, y: 0, width: radius*2, height: radius*2)
         imageView.layer.cornerRadius = radius
         imageView.layer.masksToBounds = true

@@ -31,9 +31,13 @@ class AddPostCell: UITableViewCell,UITextViewDelegate,UICollectionViewDelegate,U
     
     let attachmentUpdatesQueue = DispatchQueue(label: "lab", qos: .utility)
     
+    
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        selectionStyle = .none
+
         
         textView.delegate = self
         attachmentsCollection.delegate = self

@@ -111,7 +111,7 @@ class LentaVC:UIViewController,UITableViewDataSource,UITableViewDelegate,LoaderD
         else
         {
            let cell = tableView.dequeueReusableCell(withIdentifier: "wallPostCell") as! postCell
-            cell.post = postsStorage[indexPath.row] as! WallPost
+            cell.post = postsStorage[indexPath.section] as! WallPost
             return cell
 
         }

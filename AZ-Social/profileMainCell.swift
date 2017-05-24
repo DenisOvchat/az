@@ -22,52 +22,60 @@ class profileMainCell:UITableViewCell,UICollectionViewDataSource,UICollectionVie
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var onMapTopConstraint: NSLayoutConstraint!
+    override func awakeFromNib() {
+        selectionStyle = .none
+
+    }
     
     var profile:FullProfile!
-    
-    func setcell(friend:FullProfile)
     {
-        profile = friend
-        topImageView.downloadedFrom(link: friend.topImageUrl!)
-        avatarImage.downloadedFrom(link: friend.pictUrl)
-        nameLabel.text = friend.name + " " + friend.secondName
-        if friend.isOnline
-        {
-            isOnlineLabel.text = "Online"
-            isOnlineLabel.textColor = UIColor(red: 0, green: 146, blue: 176, al: 1)
+        didSet{
+            //profile = friend
+            topImageView.downloadedFrom(link: profile.topImageUrl!, contentMode: .scaleAspectFill)
+            topImageView.downloadedFrom(link: profile.topImageUrl!)
+            avatarImage.downloadedFrom(link: profile.pictUrl)
+            avatarImage.layer.cornerRadius = 60
+            avatarImage.layer.masksToBounds = true
+            avatarImage.layer.borderWidth = 2
+            avatarImage.layer.borderColor = UIColor.white.cgColor
+
+
+            nameLabel.text = profile.name + " " + profile.secondName
+            if profile.isOnline
+            {
+                isOnlineLabel.text = "Online"
+                isOnlineLabel.textColor = UIColor(red: 0, green: 146, blue: 176, al: 1)
+            }
+            else
+            {
+                isOnlineLabel.text = "Offline"
+                isOnlineLabel.textColor = UIColor(red: 155, green: 155, blue: 155, al: 1)
+            }
+            //oldcityLabel.text = friend.WhereFrom
+            
+            let now = Date()
+            let birthday: Date = profile.BirhDay
+            let calendar = Calendar.current
+            let ageComponents = calendar.dateComponents([.year], from: birthday, to: now)
+            let age = ageComponents.year!
+            oldcityLabel.text = age.description + profile.WhereFrom
+            if (profile.isMine)
+            {
+                onMapTopConstraint.constant = 10
+            }
+            else
+            {
+                onMapTopConstraint.constant = 66
+            }
+            
+            collectionView.delegate = self
+            collectionView.dataSource = self
+            collectionView.reloadData()
         }
-        else
-        {
-            isOnlineLabel.text = "Offline"
-            isOnlineLabel.textColor = UIColor(red: 155, green: 155, blue: 155, al: 1)
-        }
-        //oldcityLabel.text = friend.WhereFrom
-        
-        let now = Date()
-        let birthday: Date = friend.BirhDay
-        let calendar = Calendar.current
-        let ageComponents = calendar.dateComponents([.year], from: birthday, to: now)
-        let age = ageComponents.year!
-        oldcityLabel.text = age.description + friend.WhereFrom
-        if (friend.isMine)
-        {
-            onMapTopConstraint.constant = 10
-        }
-        else
-        {
-            onMapTopConstraint.constant = 66
-        }
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.reloadData()
-        //collectionView.flow
-        //collectionView.setsize
-        //let layout = UICollectionViewFlowLayout()
-        
-        //layout.scrollDirection = .vertical
-        //collectionView.lay
     }
+    
+    
+   
     
 
     

@@ -14,7 +14,7 @@ class fiveFriendsCell:UICollectionViewCell
     @IBOutlet weak var avat: AvatarImage!
     @IBOutlet weak var name: UILabel!
     
-    func setcell(friend:Friend)
+    func setcell(friend:Person)
     {
         UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)
         UIFont.systemFont(ofSize: 15, weight: UIFontWeightBold)

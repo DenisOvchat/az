@@ -10,7 +10,7 @@ import UIKit
 class PhoneCodeInputVC:UIViewController,UITextFieldDelegate
 {
     @IBOutlet weak var field: UITextField!
-    var rigistrationData:[String:Any] = [String:Any]()
+    var rigistrationData:[String:Any]!
     override func viewDidLoad() {
         field.keyboardType = .decimalPad
         field.delegate =  self

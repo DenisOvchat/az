@@ -95,6 +95,7 @@ class MailInputVC:UIViewController,UITextFieldDelegate
         
         ServerManager.shared(named: "main")?.POSTJSONRequestByAdding(postfix: "/persons/verification", data: data, complititionHandler: nil)
         rigistrationData["email"] = field.text
+        (segue.destination as! PhoneCodeInputVC).rigistrationData = rigistrationData
 
     }
     

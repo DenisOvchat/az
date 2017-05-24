@@ -26,6 +26,13 @@ class postCell:UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSour
     
     var collectionSizes=[CGSize]()
     
+    override func awakeFromNib() {
+
+
+        selectionStyle = .none
+        
+        
+    }
     var post:WallPost!
     {
         didSet{

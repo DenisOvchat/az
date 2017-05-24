@@ -69,6 +69,8 @@
 		98E84D5A1E74065B00F0A110 /* DialogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E84D591E74065B00F0A110 /* DialogVC.swift */; };
 		98FBA5D51E8A92FB00C827C5 /* DialogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FBA5D41E8A92FB00C827C5 /* DialogCell.swift */; };
 		98FBA5D71E8AEF7400C827C5 /* doQGi8s0MzU.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 98FBA5D61E8AEF7400C827C5 /* doQGi8s0MzU.jpg */; };
+		98FD6F9E1ED561A4003B1FA2 /* ProfileMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98FD6F9D1ED561A4003B1FA2 /* ProfileMainCell.xib */; };
+		98FD6FA01ED57A01003B1FA2 /* FullProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FD6F9F1ED57A01003B1FA2 /* FullProfile.swift */; };
 		E26ABF2744109CA6E6ADD43D /* Pods_AZ_Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F1D92B880EE8F57C8A1B49 /* Pods_AZ_Social.framework */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +142,8 @@
 		98E84D591E74065B00F0A110 /* DialogVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogVC.swift; sourceTree = "<group>"; };
 		98FBA5D41E8A92FB00C827C5 /* DialogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogCell.swift; sourceTree = "<group>"; };
 		98FBA5D61E8AEF7400C827C5 /* doQGi8s0MzU.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doQGi8s0MzU.jpg; sourceTree = "<group>"; };
+		98FD6F9D1ED561A4003B1FA2 /* ProfileMainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileMainCell.xib; sourceTree = "<group>"; };
+		98FD6F9F1ED57A01003B1FA2 /* FullProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullProfile.swift; sourceTree = "<group>"; };
 		F3F1D92B880EE8F57C8A1B49 /* Pods_AZ_Social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AZ_Social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -269,10 +273,12 @@
 		98822C0C1EB7953A008953C2 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				980E9C361E6FE529003527E1 /* Objects.swift */,
 				9856D7381EBB15C7006868E2 /* Attachments */,
 				98946AFC1EB4C7EF00625614 /* Entity.swift */,
 				98946AF21EB4A02D00625614 /* WallPost.swift */,
 				989F97AC1EB359F5004DC85B /* Person.swift */,
+				98FD6F9F1ED57A01003B1FA2 /* FullProfile.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -293,6 +299,7 @@
 				988BC81F1EBA40D10075714D /* WallPostCellTableViewCell.xib */,
 				988BC8281EBA6C590075714D /* AttachmentCellCollectionViewCell.xib */,
 				988BC8241EBA48490075714D /* AddPostCell.xib */,
+				98FD6F9D1ED561A4003B1FA2 /* ProfileMainCell.xib */,
 			);
 			name = XIBS;
 			sourceTree = "<group>";
@@ -308,7 +315,6 @@
 		98946AFE1EB4C86000625614 /* Storages */ = {
 			isa = PBXGroup;
 			children = (
-				980E9C361E6FE529003527E1 /* Objects.swift */,
 				98946AFF1EB4CAF000625614 /* EntityStorage.swift */,
 				98946B011EB4D00900625614 /* WallPostStorage.swift */,
 			);
@@ -330,6 +336,7 @@
 			children = (
 				988BC8221EBA40DC0075714D /* XIBS */,
 				980C733F1E9E21590067F4D3 /* postCell.swift */,
+				98E4B75E1E9CC405006856EF /* profileMainCell.swift */,
 				98C288171EC268FB00ECA0BE /* PhotosCollectionView.swift */,
 				988BC8271EBA6C590075714D /* AttachmentCellCollectionViewCell.swift */,
 				988BC8231EBA48480075714D /* AddPostCell.swift */,
@@ -337,7 +344,6 @@
 				98476A411E72AF8B00E7CE3B /* cellFriend.swift */,
 				98476A451E72B5EB00E7CE3B /* 5FreindsCell.swift */,
 				98B0533B1E94F5A200E1602F /* 5freindsTableCell.swift */,
-				98E4B75E1E9CC405006856EF /* profileMainCell.swift */,
 				98FBA5D41E8A92FB00C827C5 /* DialogCell.swift */,
 			);
 			name = Cells;
@@ -486,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				981F8E7E1E6AC843003A280A /* LaunchScreen.storyboard in Resources */,
+				98FD6F9E1ED561A4003B1FA2 /* ProfileMainCell.xib in Resources */,
 				984A5E681E7C00B3008EC368 /* ФонРегистрации.png in Resources */,
 				981F8E7B1E6AC843003A280A /* Assets.xcassets in Resources */,
 				981F8E761E6AC843003A280A /* Main.storyboard in Resources */,
@@ -579,6 +586,7 @@
 				98822C0B1EB7873F008953C2 /* LoaderDelegate.swift in Sources */,
 				98946AF31EB4A02D00625614 /* WallPost.swift in Sources */,
 				98C288161EC2660300ECA0BE /* CustomPhotosLayout.swift in Sources */,
+				98FD6FA01ED57A01003B1FA2 /* FullProfile.swift in Sources */,
 				98476A441E72B36F00E7CE3B /* AvatarImage.swift in Sources */,
 				98C720D01EAC99EB00BDAD18 /* MapsVC.swift in Sources */,
 				988BC8291EBA6C590075714D /* AttachmentCellCollectionViewCell.swift in Sources */,
