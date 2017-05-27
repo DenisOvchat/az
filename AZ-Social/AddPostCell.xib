@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,11 +14,11 @@
             <rect key="frame" x="0.0" y="0.0" width="323" height="237"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="323" height="237"/>
+                <rect key="frame" x="0.0" y="0.0" width="323" height="236"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="aZO-Fn-SU7">
-                        <rect key="frame" x="8" y="74" width="240" height="128"/>
+                        <rect key="frame" x="41" y="74" width="192" height="133"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="128" id="ueU-Rj-zrZ"/>
@@ -34,43 +33,42 @@
                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Opy-Ye-d5F">
                         <rect key="frame" x="260" y="8" width="55" height="52"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="16" id="Sms-hL-1ox"/>
-                            <constraint firstAttribute="height" constant="16" id="zh0-iu-NlC"/>
+                            <constraint firstAttribute="width" constant="20" id="Sms-hL-1ox"/>
+                            <constraint firstAttribute="height" constant="20" id="zh0-iu-NlC"/>
                         </constraints>
-                        <state key="normal" title="Button" image="doQGi8s0MzU.jpg"/>
+                        <state key="normal" backgroundImage="export"/>
                         <connections>
                             <action selector="addAttachmentsPushed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uSE-hQ-ldU"/>
                         </connections>
                     </button>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eMT-9O-HiD">
-                        <rect key="frame" x="22" y="8" width="211" height="52"/>
+                        <rect key="frame" x="50" y="8" width="183" height="52"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3y-TX-26t">
-                        <rect key="frame" x="260" y="74" width="55" height="52"/>
+                        <rect key="frame" x="260" y="74" width="45" height="52"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="16" id="Bk5-Ub-fih"/>
-                            <constraint firstAttribute="height" constant="16" id="aBx-Rx-uUP"/>
+                            <constraint firstAttribute="width" constant="20" id="Bk5-Ub-fih"/>
+                            <constraint firstAttribute="height" constant="20" id="aBx-Rx-uUP"/>
                         </constraints>
-                        <state key="normal" title="Button" image="doQGi8s0MzU.jpg"/>
+                        <state key="normal" backgroundImage="edit"/>
                     </button>
                 </subviews>
                 <color key="backgroundColor" red="0.0" green="0.58039215690000001" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="Opy-Ye-d5F" firstAttribute="leading" secondItem="eMT-9O-HiD" secondAttribute="trailing" constant="15" id="0k2-Dq-B5K"/>
-                    <constraint firstItem="i3y-TX-26t" firstAttribute="top" secondItem="Opy-Ye-d5F" secondAttribute="bottom" constant="5" id="2be-GC-xlE"/>
                     <constraint firstItem="eMT-9O-HiD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="9it-VG-V7p"/>
-                    <constraint firstAttribute="trailing" secondItem="Opy-Ye-d5F" secondAttribute="trailing" constant="19" id="FPd-79-rjq"/>
+                    <constraint firstAttribute="trailing" secondItem="Opy-Ye-d5F" secondAttribute="trailing" constant="15" id="FPd-79-rjq"/>
                     <constraint firstItem="aZO-Fn-SU7" firstAttribute="top" secondItem="eMT-9O-HiD" secondAttribute="bottom" constant="15" id="L3E-Fy-BsF"/>
+                    <constraint firstAttribute="bottom" secondItem="aZO-Fn-SU7" secondAttribute="bottom" constant="15" id="M3i-kS-X68"/>
                     <constraint firstItem="i3y-TX-26t" firstAttribute="centerX" secondItem="Opy-Ye-d5F" secondAttribute="centerX" id="NAB-zR-T7x"/>
-                    <constraint firstItem="Opy-Ye-d5F" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="OBK-Ws-mLm"/>
-                    <constraint firstItem="aZO-Fn-SU7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="UoA-8y-G5C"/>
-                    <constraint firstItem="Opy-Ye-d5F" firstAttribute="leading" secondItem="aZO-Fn-SU7" secondAttribute="trailing" constant="15" id="ad3-IG-R1q"/>
+                    <constraint firstItem="Opy-Ye-d5F" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="OBK-Ws-mLm"/>
                     <constraint firstItem="eMT-9O-HiD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="elF-9E-LbJ"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="aZO-Fn-SU7" secondAttribute="bottom" constant="15" id="kxh-Kc-F7T"/>
+                    <constraint firstItem="i3y-TX-26t" firstAttribute="leading" secondItem="aZO-Fn-SU7" secondAttribute="trailing" constant="15" id="igh-yU-k41"/>
+                    <constraint firstItem="aZO-Fn-SU7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="mRe-u7-vJ9"/>
+                    <constraint firstItem="i3y-TX-26t" firstAttribute="bottom" secondItem="aZO-Fn-SU7" secondAttribute="bottom" id="myE-DQ-Ywl"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -82,6 +80,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="doQGi8s0MzU.jpg" width="750" height="498"/>
+        <image name="edit" width="16" height="16"/>
+        <image name="export" width="16" height="16"/>
     </resources>
 </document>

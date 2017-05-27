@@ -25,7 +25,7 @@ class AvatarImage:UIView
         statusView.layer.borderWidth = 1
         statusView.backgroundColor = UIColor(red: 0, green: 148, blue: 176, al: 1)
         statusView.layer.borderColor = UIColor.white.cgColor
-        imageView.contentMode = .scaleAspectFill
+        //imageView.contentMode = .
         
         addSubview(imageView)
         addSubview(statusView)

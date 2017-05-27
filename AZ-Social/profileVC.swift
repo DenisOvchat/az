@@ -11,6 +11,8 @@ import UIKit
 class profileVC:UIViewController,UITableViewDelegate,UITableViewDataSource,LoaderDelegate
 {
     
+
+    
     @IBOutlet weak var settingsBut: UIBarButtonItem!
 
     @IBOutlet weak var tableView: UITableView!
@@ -27,6 +29,9 @@ class profileVC:UIViewController,UITableViewDelegate,UITableViewDataSource,Loade
     
     override func viewDidLoad() {
         
+        
+        
+
         profile.postsStorage = postsStorage
 
         postsLoader = WallPostLoaderFromServer(named: "newsServerLoader", with: ServerManager.shared(named: "main")!, qos: .userInteractive)
@@ -39,6 +44,15 @@ class profileVC:UIViewController,UITableViewDelegate,UITableViewDataSource,Loade
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tableView.sectionFooterHeight =  0
+        tableView.sectionHeaderHeight =  0
+        tableView.tableHeaderView = nil
+        tableView.tableFooterView?.frame = CGRect.zero
+        
+        tableView.estimatedSectionFooterHeight = 0
+        tableView.estimatedSectionHeaderHeight = 0
+        
+        postsLoader.load(count: 5)
 
 
     }
@@ -46,12 +60,14 @@ class profileVC:UIViewController,UITableViewDelegate,UITableViewDataSource,Loade
         super.viewDidAppear(animated)
         
         
-        ServerManager.shared(named: "main")?.GETRequestByAdding(postfix: "/id15",
+        ServerManager.shared(named: "main")?.GETRequestByAdding(postfix: "/id22",
             complititionHandler:  { (data:Data?, response:URLResponse?, error:Error?) in
             
             
             
         }, withCookies: true)
+        
+        
     }
     override func loadView() {
        super.loadView()
@@ -85,6 +101,7 @@ class profileVC:UIViewController,UITableViewDelegate,UITableViewDataSource,Loade
 
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
@@ -100,7 +117,7 @@ class profileVC:UIViewController,UITableViewDelegate,UITableViewDataSource,Loade
             
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "wallPostCell") as! postCell
-            cell.post = (postsStorage[indexPath.section - 2] as! WallPost)
+            cell.post = (postsStorage[indexPath.row ] as! WallPost)
             return cell
             
             
@@ -120,13 +137,47 @@ class profileVC:UIViewController,UITableViewDelegate,UITableViewDataSource,Loade
         }
     }*/
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2 + postsStorage.count
+        return 3
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch section {
+        case 0:
+            
+            
+            return 1
+        case 1:
+            
+            
+            return 1
+            
+        default:
+            return postsStorage.count
+            
+            
+        }
+
+        return postsStorage.count
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+    }
     
+    func didLoadEntities(Amount: UInt) {
+        
+        
+    
+         
+      //  tableView.beginUpdates()
+        //let paths = IndexPath.setOfIndexPaths(startRow: 2, count: Amount, in: 0)
+      //  tableView.insertRows(at: paths, with: UITableViewRowAnimation.automatic)
+        tableView.reloadSections(IndexSet(integersIn: 2...2), with: UITableViewRowAnimation.automatic)
+      //  tableView.endUpdates()
+ 
+    }
     
 }

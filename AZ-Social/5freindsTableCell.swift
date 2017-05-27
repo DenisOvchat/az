@@ -18,6 +18,10 @@ class fiveFriendstableCell:UITableViewCell,UICollectionViewDelegate,UICollection
     @IBOutlet weak var collectionView: UICollectionView!
     func setcell(friends:[Person])
     {
+        let nib = UINib(nibName: "FiveFriendsCollectionCell", bundle: nil)
+        
+        collectionView.register(nib, forCellWithReuseIdentifier: "collectionCell")
+
         collectionView.delegate = self
         collectionView.dataSource = self
         fiveFriends = friends
@@ -27,7 +31,7 @@ class fiveFriendstableCell:UITableViewCell,UICollectionViewDelegate,UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! fiveFriendsCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! FiveFriendsCollectionCell
         cell.setcell(friend: fiveFriends[indexPath.row])
         return cell
     }
@@ -36,7 +40,7 @@ class fiveFriendstableCell:UITableViewCell,UICollectionViewDelegate,UICollection
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return fiveFriends.count >= 8 ? 8 :fiveFriends.count
     }
 
     

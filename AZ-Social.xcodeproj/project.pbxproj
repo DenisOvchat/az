@@ -25,12 +25,17 @@
 		98405E461EB5EA0E00639873 /* MailInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98405E451EB5EA0E00639873 /* MailInputVC.swift */; };
 		98476A421E72AF8B00E7CE3B /* cellFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98476A411E72AF8B00E7CE3B /* cellFriend.swift */; };
 		98476A441E72B36F00E7CE3B /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98476A431E72B36F00E7CE3B /* AvatarImage.swift */; };
-		98476A461E72B5EB00E7CE3B /* 5FreindsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98476A451E72B5EB00E7CE3B /* 5FreindsCell.swift */; };
 		984A5E681E7C00B3008EC368 /* ФонРегистрации.png in Resources */ = {isa = PBXBuildFile; fileRef = 984A5E671E7C00B3008EC368 /* ФонРегистрации.png */; };
 		9856D73A1EBB15EB006868E2 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9856D7391EBB15EB006868E2 /* Attachment.swift */; };
 		9856D73C1EBB1810006868E2 /* PhotoAttachmentFromDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9856D73B1EBB1810006868E2 /* PhotoAttachmentFromDevice.swift */; };
 		9856D73E1EBB18A1006868E2 /* PhotoAttachmentFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9856D73D1EBB18A1006868E2 /* PhotoAttachmentFromURL.swift */; };
 		9856D7401EBB3086006868E2 /* PHAssetToUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9856D73F1EBB3086006868E2 /* PHAssetToUIImage.swift */; };
+		98654DB21ED8312100D2AB95 /* PictureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98654DB11ED8312100D2AB95 /* PictureData.swift */; };
+		98654DB51ED8851D00D2AB95 /* PostPhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98654DB31ED8851D00D2AB95 /* PostPhotosCell.swift */; };
+		98654DB61ED8851D00D2AB95 /* PostPhotosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98654DB41ED8851D00D2AB95 /* PostPhotosCell.xib */; };
+		98654DBB1ED8C0AB00D2AB95 /* FiveFriendsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98654DB91ED8C0AB00D2AB95 /* FiveFriendsTableCell.swift */; };
+		98654DC31ED8E06B00D2AB95 /* FiveFriendsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98654DC11ED8E06B00D2AB95 /* FiveFriendsCollectionCell.swift */; };
+		98654DC41ED8E06B00D2AB95 /* FiveFriendsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98654DC21ED8E06B00D2AB95 /* FiveFriendsCollectionCell.xib */; };
 		98822C0B1EB7873F008953C2 /* LoaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98822C0A1EB7873F008953C2 /* LoaderDelegate.swift */; };
 		98822C101EB7957E008953C2 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98822C0F1EB7957E008953C2 /* Loader.swift */; };
 		98822C121EB79597008953C2 /* WallPostLoaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98822C111EB79597008953C2 /* WallPostLoaders.swift */; };
@@ -97,12 +102,17 @@
 		98405E451EB5EA0E00639873 /* MailInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailInputVC.swift; sourceTree = "<group>"; };
 		98476A411E72AF8B00E7CE3B /* cellFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cellFriend.swift; sourceTree = "<group>"; };
 		98476A431E72B36F00E7CE3B /* AvatarImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
-		98476A451E72B5EB00E7CE3B /* 5FreindsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 5FreindsCell.swift; sourceTree = "<group>"; };
 		984A5E671E7C00B3008EC368 /* ФонРегистрации.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ФонРегистрации.png"; sourceTree = "<group>"; };
 		9856D7391EBB15EB006868E2 /* Attachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
 		9856D73B1EBB1810006868E2 /* PhotoAttachmentFromDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAttachmentFromDevice.swift; sourceTree = "<group>"; };
 		9856D73D1EBB18A1006868E2 /* PhotoAttachmentFromURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAttachmentFromURL.swift; sourceTree = "<group>"; };
 		9856D73F1EBB3086006868E2 /* PHAssetToUIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAssetToUIImage.swift; sourceTree = "<group>"; };
+		98654DB11ED8312100D2AB95 /* PictureData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureData.swift; sourceTree = "<group>"; };
+		98654DB31ED8851D00D2AB95 /* PostPhotosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPhotosCell.swift; sourceTree = "<group>"; };
+		98654DB41ED8851D00D2AB95 /* PostPhotosCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostPhotosCell.xib; sourceTree = "<group>"; };
+		98654DB91ED8C0AB00D2AB95 /* FiveFriendsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiveFriendsTableCell.swift; sourceTree = "<group>"; };
+		98654DC11ED8E06B00D2AB95 /* FiveFriendsCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiveFriendsCollectionCell.swift; sourceTree = "<group>"; };
+		98654DC21ED8E06B00D2AB95 /* FiveFriendsCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FiveFriendsCollectionCell.xib; sourceTree = "<group>"; };
 		98822C0A1EB7873F008953C2 /* LoaderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderDelegate.swift; sourceTree = "<group>"; };
 		98822C0F1EB7957E008953C2 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		98822C111EB79597008953C2 /* WallPostLoaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPostLoaders.swift; sourceTree = "<group>"; };
@@ -300,6 +310,8 @@
 				988BC8281EBA6C590075714D /* AttachmentCellCollectionViewCell.xib */,
 				988BC8241EBA48490075714D /* AddPostCell.xib */,
 				98FD6F9D1ED561A4003B1FA2 /* ProfileMainCell.xib */,
+				98654DB41ED8851D00D2AB95 /* PostPhotosCell.xib */,
+				98654DC21ED8E06B00D2AB95 /* FiveFriendsCollectionCell.xib */,
 			);
 			name = XIBS;
 			sourceTree = "<group>";
@@ -336,13 +348,15 @@
 			children = (
 				988BC8221EBA40DC0075714D /* XIBS */,
 				980C733F1E9E21590067F4D3 /* postCell.swift */,
+				98654DB31ED8851D00D2AB95 /* PostPhotosCell.swift */,
 				98E4B75E1E9CC405006856EF /* profileMainCell.swift */,
 				98C288171EC268FB00ECA0BE /* PhotosCollectionView.swift */,
 				988BC8271EBA6C590075714D /* AttachmentCellCollectionViewCell.swift */,
 				988BC8231EBA48480075714D /* AddPostCell.swift */,
 				98C43F551E866BF0007023A3 /* DialogsCell.swift */,
 				98476A411E72AF8B00E7CE3B /* cellFriend.swift */,
-				98476A451E72B5EB00E7CE3B /* 5FreindsCell.swift */,
+				98654DB91ED8C0AB00D2AB95 /* FiveFriendsTableCell.swift */,
+				98654DC11ED8E06B00D2AB95 /* FiveFriendsCollectionCell.swift */,
 				98B0533B1E94F5A200E1602F /* 5freindsTableCell.swift */,
 				98FBA5D41E8A92FB00C827C5 /* DialogCell.swift */,
 			);
@@ -374,6 +388,7 @@
 				98C288151EC2660300ECA0BE /* CustomPhotosLayout.swift */,
 				98BA35331EC639420049536B /* photosLayout.swift */,
 				980E9C341E6FE3FA003527E1 /* Funcs.swift */,
+				98654DB11ED8312100D2AB95 /* PictureData.swift */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -493,6 +508,7 @@
 			files = (
 				981F8E7E1E6AC843003A280A /* LaunchScreen.storyboard in Resources */,
 				98FD6F9E1ED561A4003B1FA2 /* ProfileMainCell.xib in Resources */,
+				98654DB61ED8851D00D2AB95 /* PostPhotosCell.xib in Resources */,
 				984A5E681E7C00B3008EC368 /* ФонРегистрации.png in Resources */,
 				981F8E7B1E6AC843003A280A /* Assets.xcassets in Resources */,
 				981F8E761E6AC843003A280A /* Main.storyboard in Resources */,
@@ -500,6 +516,7 @@
 				988BC8211EBA40D10075714D /* WallPostCellTableViewCell.xib in Resources */,
 				98FBA5D71E8AEF7400C827C5 /* doQGi8s0MzU.jpg in Resources */,
 				988BC82A1EBA6C590075714D /* AttachmentCellCollectionViewCell.xib in Resources */,
+				98654DC41ED8E06B00D2AB95 /* FiveFriendsCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,16 +590,17 @@
 				98946AF71EB4AA9600625614 /* DataTranslator.swift in Sources */,
 				9856D7401EBB3086006868E2 /* PHAssetToUIImage.swift in Sources */,
 				980E9C2F1E6FC6D1003527E1 /* LentaVC.swift in Sources */,
-				98476A461E72B5EB00E7CE3B /* 5FreindsCell.swift in Sources */,
 				98822C101EB7957E008953C2 /* Loader.swift in Sources */,
 				98AD91461EA3537B008696A0 /* SettingsVC.swift in Sources */,
 				98B0533E1E9503EE00E1602F /* profileVC.swift in Sources */,
 				980E9C351E6FE3FA003527E1 /* Funcs.swift in Sources */,
 				989F97AD1EB359F5004DC85B /* Person.swift in Sources */,
 				98BA35341EC639420049536B /* photosLayout.swift in Sources */,
+				98654DB51ED8851D00D2AB95 /* PostPhotosCell.swift in Sources */,
 				98B6B5A91E8C154100E220D3 /* FriendsSwipe.swift in Sources */,
 				98946AFD1EB4C7EF00625614 /* Entity.swift in Sources */,
 				989F97A61EB34EDD004DC85B /* ImageViewExtension.swift in Sources */,
+				98654DC31ED8E06B00D2AB95 /* FiveFriendsCollectionCell.swift in Sources */,
 				98822C0B1EB7873F008953C2 /* LoaderDelegate.swift in Sources */,
 				98946AF31EB4A02D00625614 /* WallPost.swift in Sources */,
 				98C288161EC2660300ECA0BE /* CustomPhotosLayout.swift in Sources */,
@@ -608,10 +626,12 @@
 				98B6B5AD1E8C2B6500E220D3 /* TBC.swift in Sources */,
 				98FBA5D51E8A92FB00C827C5 /* DialogCell.swift in Sources */,
 				98476A421E72AF8B00E7CE3B /* cellFriend.swift in Sources */,
+				98654DB21ED8312100D2AB95 /* PictureData.swift in Sources */,
 				98822C121EB79597008953C2 /* WallPostLoaders.swift in Sources */,
 				98405E461EB5EA0E00639873 /* MailInputVC.swift in Sources */,
 				98405E3C1EB5E8C800639873 /* PhoneCodeInputVC.swift in Sources */,
 				980E9C311E6FDFDE003527E1 /* FriendsVC.swift in Sources */,
+				98654DBB1ED8C0AB00D2AB95 /* FiveFriendsTableCell.swift in Sources */,
 				98C43F561E866BF0007023A3 /* DialogsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

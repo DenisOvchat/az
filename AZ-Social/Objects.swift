@@ -30,7 +30,7 @@ class dialogBody:Person
     
     override init(name:String,secondName:String,pictUrl:String,isOnline:Bool,id:Int) {
         super.init(name: name, secondName: secondName, pictUrl: pictUrl, isOnline: isOnline, id: id)
-        self.name = name
+          self.name = name
         self.pictUrl = pictUrl
         self.isOnline = isOnline
         self.secondName = secondName

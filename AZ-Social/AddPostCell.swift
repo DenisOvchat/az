@@ -37,7 +37,7 @@ class AddPostCell: UITableViewCell,UITextViewDelegate,UICollectionViewDelegate,U
         super.awakeFromNib()
         
         selectionStyle = .none
-
+        attachmentsHeightConstraint.constant = 0
         
         textView.delegate = self
         attachmentsCollection.delegate = self
@@ -110,7 +110,11 @@ class AddPostCell: UITableViewCell,UITextViewDelegate,UICollectionViewDelegate,U
                         
 
                     self.attachmentsCollection.insertItems(at: indexPaths )
-                
+                    self.attachmentsHeightConstraint.constant = self.attachmentsCollection.contentSize.height
+                    print(self.attachmentsCollection.contentSize.height)
+                    self.setNeedsLayout()
+
+                   // self.coll
 
                 }
                 
@@ -169,6 +173,8 @@ class AddPostCell: UITableViewCell,UITextViewDelegate,UICollectionViewDelegate,U
             self.attachments.remove(at: sender.tag)
             
             self.attachmentsCollection.deleteItems(at: [IndexPath(row: sender.tag, section: 0)])
+            self.attachmentsHeightConstraint.constant = self.attachmentsCollection.contentSize.height
+            self.setNeedsLayout()
         }
         
     }

@@ -20,6 +20,8 @@ class cellFriend:UITableViewCell
     
     func setcell(friend:Person)
     {
+        avat.imageView.contentMode =  .scaleAspectFit
+
         UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)
         UIFont.systemFont(ofSize: 15, weight: UIFontWeightBold)
 

@@ -12,13 +12,13 @@ import UIKit
 class EntitiesStorage
 {
     
-    private var entitiesArray:[Entity]
+    private var entitiesArray:NSMutableArray
     
     private var loaders = [String:Loader]()
     var isLoadingNewElements:Bool = false
     
     var dispatchQeeue:DispatchQueue?
-    init(entitiesArray:[Entity])
+    init(entitiesArray:NSMutableArray)
     {
         self.entitiesArray = entitiesArray
     }
@@ -32,6 +32,7 @@ class EntitiesStorage
         else
         {
             return false
+            print("Loader with this name already assigned")
         }
     }
     
@@ -50,10 +51,13 @@ class EntitiesStorage
         
     }
     
-    subscript(index: Int) -> Entity
+    subscript(index: Int) -> Any?
     {
         get {
-            return entitiesArray[index]
+            
+                return entitiesArray[index]
+            
+            
         }
      
     }

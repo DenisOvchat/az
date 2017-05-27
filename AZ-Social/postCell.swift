@@ -21,6 +21,7 @@ class postCell:UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSour
     @IBOutlet weak var bodyContentView: UIView!
     
     
+    @IBOutlet weak var separator: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     
@@ -28,7 +29,7 @@ class postCell:UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSour
     
     override func awakeFromNib() {
 
-
+        separator.layer.borderColor = UIColor(red: 216/255, green: 216/255, blue: 216/255, alpha: 1).cgColor
         selectionStyle = .none
         
         
@@ -80,8 +81,11 @@ class postCell:UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSour
             
             bodyLabel.text = post.body
             
-            if post.pictureUrls != nil
+            if post.pictureInfos != nil
             {
+                let nib = UINib(nibName: "PostPhotosCell", bundle: nil)
+
+                collectionView.register(nib, forCellWithReuseIdentifier: "photoCell")
                 collectionView.delegate = self
                 collectionView.dataSource = self
                 collectionView.reloadData()
@@ -96,16 +100,8 @@ class postCell:UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSour
             }
             
             
-            let width = UIScreen.main.bounds.width
             
-            if  (post.pictureSizes?[0].IsHorizontal())!
-            {
-                collectionSizes.append(CGSize(width: width - 10 , height:  (post.pictureSizes?[0].height(for: width))!))
-            }
-            else
-            {
-                
-            }
+        
             
             
             
@@ -125,49 +121,67 @@ class postCell:UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSour
     
     
     
-    
-    
-    
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! fiveFriendsCell
-      //  cell.setcell(friend: profile.friends[indexPath.row])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PostPhotosCell
+        
+        if let info = post.pictureInfos?[indexPath.row]
+        {
+            cell.photoInfo = info
+            
+        }
+        //cell.backgroundColor = UIColor.black
+        //  cell.setcell(friend: profile.friends[indexPath.row])
         return cell
     }
+    
+    
+    
+   /* func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PostPhotosCell
+        
+        if let info = post.pictureInfos?[indexPath.row]
+        {
+            cell.photoInfo = info
+
+        }
+        //cell.backgroundColor = UIColor.black
+      //  cell.setcell(friend: profile.friends[indexPath.row])
+        return cell
+    }*/
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return post.pictureUrls!.count
+        return post.pictureInfos!.count
     }
-    /*
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         //2
-        let width = UIScreen.main.bounds.width
-        let size = post.pictureSizes?[indexPath.row]
+       // let size = post.pictureInfos?[indexPath.row].size
         
-        
-        return CGSize(width: widthPerItem, height: widthPerItem)
+        UIScreen.main.bounds.width
+        let picDimension = UIScreen.main.bounds.width / 4.0
+        return CGSize(width: picDimension, height: picDimension)
     }
     
     //3
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsets
+        return UIEdgeInsets.zero
     }
-    
+ 
     // 4
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsets.left
+        return 10
     }
-    */
     
+  
     
     
     

@@ -14,8 +14,7 @@ class WallPost:Entity
     var sender:Person
     var body:String?
     var map:MapDirection?
-    var pictureUrls:[String]?
-    var pictureSizes:[CGSize]?
+    var pictureInfos:[PictureFromNetInfo]?
     var time:Date
     init(send:Person,time:Date) {
         sender = send

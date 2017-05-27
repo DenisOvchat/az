@@ -18,18 +18,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="399" height="677"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aY5-7M-efR">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aY5-7M-efR">
                         <rect key="frame" x="49" y="16" width="310" height="127"/>
                         <color key="backgroundColor" red="0.0" green="0.58039215690000001" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="140" id="Gbo-y6-3VU"/>
-                        </constraints>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h3J-rv-4mO">
-                        <rect key="frame" x="136" y="85" width="112" height="94"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="120" id="FG6-i4-E1n"/>
-                            <constraint firstAttribute="height" constant="120" id="QgV-kr-qY4"/>
+                            <constraint firstAttribute="height" constant="140" id="RBd-Lh-3pd"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccP-E7-oVN">
@@ -70,7 +63,12 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="91" id="OZI-Nh-s36"/>
                         </constraints>
-                        <collectionViewLayout key="collectionViewLayout" id="wtX-ct-KnY" customClass="layout" customModule="AZ_Social" customModuleProvider="target"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="faZ-qd-XZI">
+                            <size key="itemSize" width="77" height="94"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
                         <cells/>
                     </collectionView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6P-cJ-uYr">
@@ -78,7 +76,7 @@
                         <attributedString key="attributedText">
                             <fragment content="Друзей">
                                 <attributes>
-                                    <font key="NSFont" metaFont="system" size="17"/>
+                                    <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
@@ -86,15 +84,23 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mC3-OW-CIW">
-                        <rect key="frame" x="16" y="370" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="370" width="391" height="44"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A91-dW-2vA">
-                                <rect key="frame" x="35" y="6" width="64" height="30"/>
-                                <state key="normal" title="На карте"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A91-dW-2vA">
+                                <rect key="frame" x="22" y="10" width="91" height="22"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="30" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="64" minY="-25" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="На карте" image="invalidName-1">
+                                    <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5L1-is-Mnd">
-                                <rect key="frame" x="231" y="6" width="94" height="30"/>
-                                <state key="normal" title="Информация"/>
+                            <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5L1-is-Mnd">
+                                <rect key="frame" x="215" y="10" width="127" height="22"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="30" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="64" minY="-25" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Информация" image="info">
+                                    <color key="titleColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -109,6 +115,14 @@
                             <constraint firstItem="A91-dW-2vA" firstAttribute="leading" secondItem="mC3-OW-CIW" secondAttribute="leading" id="f6z-zC-ZHv"/>
                             <constraint firstItem="A91-dW-2vA" firstAttribute="top" secondItem="mC3-OW-CIW" secondAttribute="top" id="qqf-kO-aSD"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorFromUIColor">
+                                <color key="value" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auX-ip-DtW">
                         <rect key="frame" x="160" y="195" width="42" height="21"/>
@@ -119,12 +133,20 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h3J-rv-4mO">
+                        <rect key="frame" x="247" y="169" width="112" height="94"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="FG6-i4-E1n"/>
+                            <constraint firstAttribute="height" constant="120" id="QgV-kr-qY4"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="s6P-cJ-uYr" secondAttribute="trailing" id="1A6-xk-8wM"/>
                     <constraint firstItem="aY5-7M-efR" firstAttribute="top" secondItem="gLe-hl-AxL" secondAttribute="top" id="1zs-0m-kLu"/>
                     <constraint firstItem="HXU-UL-Rqh" firstAttribute="top" secondItem="9NA-ZC-zCP" secondAttribute="bottom" constant="10" id="2mh-kS-CVR"/>
                     <constraint firstAttribute="trailingMargin" secondItem="HXU-UL-Rqh" secondAttribute="trailing" constant="15" id="ADq-Uz-PA6"/>
+                    <constraint firstItem="h3J-rv-4mO" firstAttribute="top" secondItem="aY5-7M-efR" secondAttribute="bottom" constant="-60" id="B94-Hf-DF2"/>
                     <constraint firstItem="ccP-E7-oVN" firstAttribute="top" secondItem="auX-ip-DtW" secondAttribute="bottom" constant="5" id="BhX-ks-hSq"/>
                     <constraint firstItem="dht-PP-UPY" firstAttribute="leading" secondItem="gLe-hl-AxL" secondAttribute="leading" id="Gya-7d-t5v"/>
                     <constraint firstAttribute="trailing" secondItem="aY5-7M-efR" secondAttribute="trailing" id="Hk1-ft-Jw9"/>
@@ -133,7 +155,6 @@
                     <constraint firstItem="auX-ip-DtW" firstAttribute="centerX" secondItem="gLe-hl-AxL" secondAttribute="centerX" id="KNR-MB-mHQ"/>
                     <constraint firstItem="9NA-ZC-zCP" firstAttribute="top" secondItem="ccP-E7-oVN" secondAttribute="bottom" constant="5" id="Lbn-cr-iwI"/>
                     <constraint firstItem="BDv-1I-jwC" firstAttribute="width" secondItem="HXU-UL-Rqh" secondAttribute="width" id="MuF-dJ-YPp"/>
-                    <constraint firstItem="h3J-rv-4mO" firstAttribute="top" secondItem="gLe-hl-AxL" secondAttribute="topMargin" constant="80" id="QkT-db-8Ce"/>
                     <constraint firstAttribute="trailing" secondItem="dht-PP-UPY" secondAttribute="trailing" id="RJg-qh-Qzk"/>
                     <constraint firstItem="ccP-E7-oVN" firstAttribute="centerX" secondItem="gLe-hl-AxL" secondAttribute="centerX" id="Uca-Hi-rc3"/>
                     <constraint firstItem="h3J-rv-4mO" firstAttribute="centerX" secondItem="gLe-hl-AxL" secondAttribute="centerX" id="Voy-wU-9Tl"/>
@@ -151,15 +172,22 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="InformationButton" destination="5L1-is-Mnd" id="3Hf-Lr-iEO"/>
                 <outlet property="avatarImage" destination="h3J-rv-4mO" id="pG1-Kk-RLC"/>
                 <outlet property="collectionView" destination="dht-PP-UPY" id="MKx-gx-KPI"/>
                 <outlet property="isOnlineLabel" destination="ccP-E7-oVN" id="rgb-Qd-ET5"/>
+                <outlet property="mapandinfoView" destination="mC3-OW-CIW" id="wca-O7-NxB"/>
                 <outlet property="nameLabel" destination="auX-ip-DtW" id="W3d-Sf-H2l"/>
                 <outlet property="oldcityLabel" destination="9NA-ZC-zCP" id="vUz-ks-ctN"/>
+                <outlet property="onMapButton" destination="A91-dW-2vA" id="Zdh-Mb-SSY"/>
                 <outlet property="onMapTopConstraint" destination="pC6-8p-IFt" id="8Lw-NN-9rP"/>
                 <outlet property="topImageView" destination="aY5-7M-efR" id="Xqc-vc-Odb"/>
             </connections>
             <point key="canvasLocation" x="54.5" y="101.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="info" width="16" height="16"/>
+        <image name="invalidName-1" width="16" height="16"/>
+    </resources>
 </document>

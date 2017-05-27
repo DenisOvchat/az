@@ -157,3 +157,24 @@ class dialogues
     
     
 }
+extension IndexPath{
+    static func setOfIndexPaths(startRow:UInt,count:UInt,in section:UInt) -> [IndexPath]
+    {
+        var paths = [IndexPath]()
+        for i in startRow..<startRow + count
+        {
+            paths.append(IndexPath(row: Int(i), section: Int(section)))
+        }
+        return paths
+    }
+    static func setOfIndexPaths(startSection:UInt,count:UInt,row:UInt) -> [IndexPath]
+    {
+        var paths = [IndexPath]()
+        for i in startSection..<startSection + count
+        {
+            paths.append(IndexPath(row: Int(row), section: Int(i)))
+        }
+        return paths
+    }
+}
+

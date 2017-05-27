@@ -20,7 +20,7 @@ class ServerManager
     
     
     
-    func GETRequestByAdding(postfix:String,complititionHandler: ((Data?,URLResponse? ,Error? ) -> Void)?,withCookies:Bool = false)
+    func GETRequestByAdding(postfix:String,complititionHandler: ((Data?,URLResponse? ,Error? ) -> Void)?,withCookies:Bool = true)
     {
         
             let configuration = URLSessionConfiguration.default
@@ -36,11 +36,11 @@ class ServerManager
                 let cookieJar = HTTPCookieStorage.shared
                 let d = cookieJar.cookies(for:         URL(string: "http://188.225.38.189")!
                 )
-                for cookie in d!{
+                //for cookie in d!{
+                    let cookie = d?[0]
                     
-                    
-                    request.addValue(cookie.name + " = " + cookie.value, forHTTPHeaderField: "Cookie")
-                }
+                    request.addValue((cookie?.value)!, forHTTPHeaderField: "X-CSRFToken")
+              //  }
                 
                 
                 
@@ -106,7 +106,7 @@ class ServerManager
         return serverDomain
     }
     
-    func POSTJSONRequestByAdding(postfix:String,data:[String:Any],complititionHandler: ((Data?,URLResponse? ,Error? ) -> Void)?,withCookies:Bool = false)
+    func POSTJSONRequestByAdding(postfix:String,data:[String:Any],complititionHandler: ((Data?,URLResponse? ,Error? ) -> Void)?,withCookies:Bool = true)
     {
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
@@ -119,7 +119,7 @@ class ServerManager
         if withCookies
         {
             let cookieJar = HTTPCookieStorage.shared
-            let d = cookieJar.cookies(for:         URL(string: "http://188.225.38.189")!
+            let d = cookieJar.cookies(for: URL(string: "http://188.225.38.189")!
             )
             for cookie in d!{
                 

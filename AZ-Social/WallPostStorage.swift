@@ -11,7 +11,7 @@ class WallPostStorage:EntitiesStorage
 {
 
     init() {
-        super.init(entitiesArray: [WallPost]())
+        super.init(entitiesArray: NSMutableArray())
     }
 }
 

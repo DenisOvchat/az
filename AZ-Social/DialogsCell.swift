@@ -18,6 +18,9 @@ class DialogsCell:UITableViewCell
     @IBOutlet weak var timeLabel: UILabel!
     
     @IBOutlet weak var checkMark: UIImageView!
+    override func awakeFromNib() {
+        selectionStyle = .none
+    }
     
     var man :dialogBody?
     {
@@ -26,6 +29,7 @@ class DialogsCell:UITableViewCell
             countLabel.layer.masksToBounds = true
             imagevw.setting(isonline: true, radius: 25)
             imagevw.imageView.downloadedFrom(link: (s?.pictUrl)!)
+            imagevw.imageView.contentMode = .scaleAspectFit
             NameLabel.text = (s?.name)! + " " + (s?.secondName)!
             
             if s!.chat.messages.count > 0

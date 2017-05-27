@@ -74,11 +74,8 @@ class DialogVC:UIViewController,UITableViewDelegate,UITableViewDataSource,UIColl
         tableView.sectionHeaderHeight =  0
         tableView.tableHeaderView = nil
         tableView.tableFooterView?.frame = CGRect.zero
-        //tableView.scrollIndicatorInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
-        //tableView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
-        //tableView.footer
+        
         tableView.estimatedSectionFooterHeight = 0
-        //tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.estimatedSectionHeaderHeight = 0
         self.tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 40

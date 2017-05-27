@@ -19,18 +19,32 @@ class profileMainCell:UITableViewCell,UICollectionViewDataSource,UICollectionVie
     
     @IBOutlet weak var oldcityLabel: UILabel!
     
+    @IBOutlet weak var mapandinfoView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var onMapButton: UIButton!
+    @IBOutlet weak var InformationButton: UIButton!
     @IBOutlet weak var onMapTopConstraint: NSLayoutConstraint!
     override func awakeFromNib() {
         selectionStyle = .none
-
+        
     }
     
     var profile:FullProfile!
     {
         didSet{
             //profile = friend
+            
+            mapandinfoView.layer.borderColor = UIColor(red: 155/255, green: 155/255, blue: 155/255, alpha: 1).cgColor
+            
+            
+            onMapButton.titleLabel?.textAlignment = .center
+            onMapButton.titleLabel?.textAlignment = .center
+            InformationButton.imageView?.center.x = InformationButton.bounds.width / 2
+            InformationButton.imageView?.center.x = InformationButton.bounds.width / 2
+
+            
+            
             topImageView.downloadedFrom(link: profile.topImageUrl!, contentMode: .scaleAspectFill)
             topImageView.downloadedFrom(link: profile.topImageUrl!)
             avatarImage.downloadedFrom(link: profile.pictUrl)
@@ -58,7 +72,7 @@ class profileMainCell:UITableViewCell,UICollectionViewDataSource,UICollectionVie
             let calendar = Calendar.current
             let ageComponents = calendar.dateComponents([.year], from: birthday, to: now)
             let age = ageComponents.year!
-            oldcityLabel.text = age.description + profile.WhereFrom
+            oldcityLabel.text = age.description + " лет, " + profile.WhereFrom
             if (profile.isMine)
             {
                 onMapTopConstraint.constant = 10
@@ -67,10 +81,14 @@ class profileMainCell:UITableViewCell,UICollectionViewDataSource,UICollectionVie
             {
                 onMapTopConstraint.constant = 66
             }
+            let nib = UINib(nibName: "FiveFriendsCollectionCell", bundle: nil)
             
+            collectionView.register(nib, forCellWithReuseIdentifier: "collectionCell")
+
             collectionView.delegate = self
             collectionView.dataSource = self
             collectionView.reloadData()
+          //  collectionView.collectionV
         }
     }
     
@@ -81,7 +99,7 @@ class profileMainCell:UITableViewCell,UICollectionViewDataSource,UICollectionVie
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! fiveFriendsCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! FiveFriendsCollectionCell
         cell.setcell(friend: profile.friends[indexPath.row])
         return cell
     }
@@ -90,10 +108,10 @@ class profileMainCell:UITableViewCell,UICollectionViewDataSource,UICollectionVie
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return profile.friends.count >= 8 ? 8 :profile.friends.count
     }
     
-    
+  
     
 }
     

@@ -8,7 +8,8 @@
 
 import Foundation
 class Loader {
-    private var array:[Entity]!
+    var array:NSMutableArray!
+  //  :[Entity]!
     var delegate:LoaderDelegate!
     private var name:String
     var queue:DispatchQueue?
@@ -16,7 +17,7 @@ class Loader {
         name = named
         queue = DispatchQueue(label: named, qos: qos)
     }
-    func assignArray(array:[Entity])
+    func assignArray(array:NSMutableArray)
     {
         self.array = array
     }
