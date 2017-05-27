@@ -34,12 +34,12 @@ class FriendsVC:UIViewController,UITableViewDelegate,UITableViewDataSource,UISea
     override func loadView() {
         super.loadView()
         friends["Частые"] = [Person]()
-        friends["Частые"]?.append(Person(name: "джобс\(1)", secondName: "неджобс", pictUrl: "https://st.kp.yandex.net/images/actor_iphone/iphone360_93826.jpg", isOnline: true, id: 3))
+        friends["Частые"]?.append(Person(name: "Стив", secondName: "Джобс", pictUrl: "https://st.kp.yandex.net/images/actor_iphone/iphone360_93826.jpg", isOnline: true, id: 3))
         friends["A"] = [Person]()
 
         for i in 0...10
         {
-            let fr = Person(name: "стив\(i)", secondName: "жопн", pictUrl: "https://st.kp.yandex.net/images/actor_iphone/iphone360_93826.jpg", isOnline: true, id: i)
+            let fr = Person(name: "Стив", secondName: "Джобс", pictUrl: "https://st.kp.yandex.net/images/actor_iphone/iphone360_93826.jpg", isOnline: true, id: i)
             friends["A"]?.append(fr)
             fiveFriends.append(fr)
             for j in 0...25
@@ -65,7 +65,7 @@ class FriendsVC:UIViewController,UITableViewDelegate,UITableViewDataSource,UISea
         self.searchController.delegate = self
         self.searchController.searchBar.delegate = self
         
-        self.searchController.hidesNavigationBarDuringPresentation = false
+       // self.searchController.hidesNavigationBarDuringPresentation = false
         self.searchController.dimsBackgroundDuringPresentation = true
         
         //self.navigationItem.titleView = searchController.searchBar
@@ -119,32 +119,31 @@ class FriendsVC:UIViewController,UITableViewDelegate,UITableViewDataSource,UISea
         UITableViewHeaderFooterView.appearance().tintColor = UIColor(netHex: 0xedf1f2)
         tableView.tintColor = UIColor(netHex: 0xedf1f2)
  */
-        tableView.delegate=self
- tableView.dataSource=self
+        if tableView != nil{
+            tableView.delegate=self
+            tableView.dataSource=self
+            tableView.rowHeight = 70
+            setLoadingScreen()
+            
+            
+            
+            
+            
+            
+            
+            self.removeLoadingScreen()
+            
+            
+            self.hasLoaded=true
+        }
+       
 
- tableView.rowHeight = 70
  
         
         
-        // tableView.sect
-       // self.tableView.estimat edRowHeight = 44
+    
         
-       // self.tableView.rowHeight = UITableViewAutomaticDimension
-        
-        //self.tableView.setNeedsLayout()
-        
-        setLoadingScreen()
-        
-        
-        
-        
-        
-        
-        
-            self.removeLoadingScreen()
-        
-        
-            self.hasLoaded=true
+       
            // self.tableView.reloadData()
             
             for family: String in UIFont.familyNames
@@ -174,8 +173,8 @@ class FriendsVC:UIViewController,UITableViewDelegate,UITableViewDataSource,UISea
         super.viewWillAppear(animated)
         //navigationController?.hidesBarsOnSwipe = true
         
-    //    navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: navigationController!.navigationBar.frame.width , height: 88)
-        navigationController?.navigationBar.barTintColor = UIColor.green
+        navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: navigationController!.navigationBar.frame.width , height: 88)
+      //  navigationController?.navigationBar.barTintColor = UIColor.green
         
        /* UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions.beginFromCurrentState
             , animations: {
@@ -188,7 +187,15 @@ class FriendsVC:UIViewController,UITableViewDelegate,UITableViewDataSource,UISea
         })
         */
     }
-    
+    /*override func viewWillDisappear(_ animated: Bool) {
+       // navigationController?.hidesBarsOnSwipe = true
+        
+        navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: navigationController!.navigationBar.frame.width , height: 64)
+       // navigationController?.navigationBar.barTintColor = UIColor.green
+    }*/
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: navigationController!.navigationBar.frame.width , height: 64)
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         

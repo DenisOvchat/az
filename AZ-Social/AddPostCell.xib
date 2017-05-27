@@ -41,7 +41,7 @@
                             <action selector="addAttachmentsPushed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uSE-hQ-ldU"/>
                         </connections>
                     </button>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eMT-9O-HiD">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eMT-9O-HiD">
                         <rect key="frame" x="50" y="8" width="183" height="52"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -56,7 +56,6 @@
                         <state key="normal" backgroundImage="edit"/>
                     </button>
                 </subviews>
-                <color key="backgroundColor" red="0.0" green="0.58039215690000001" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="Opy-Ye-d5F" firstAttribute="leading" secondItem="eMT-9O-HiD" secondAttribute="trailing" constant="15" id="0k2-Dq-B5K"/>
                     <constraint firstItem="eMT-9O-HiD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="9it-VG-V7p"/>

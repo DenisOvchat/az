@@ -18,7 +18,7 @@ class DialogsVC:UIViewController,UITableViewDelegate,UITableViewDataSource
        // show(b!, sender: nil)
         for i in 0...10
         {
-            let fr = dialogBody(name: "стиви\(i)", secondName: "жопс", pictUrl: "https://st.kp.yandex.net/images/actor_iphone/iphone360_93826.jpg", isOnline: true, id: i)
+            let fr = dialogBody(name: "Cтиви", secondName: "Джобс", pictUrl: "https://st.kp.yandex.net/images/actor_iphone/iphone360_93826.jpg", isOnline: true, id: i)
             fr.chat.newMessagesCount = 1
             dialogs.add(friend: fr, forKey: 400 - i)
             for j in 0...25
@@ -26,11 +26,11 @@ class DialogsVC:UIViewController,UITableViewDelegate,UITableViewDataSource
                 if j % 2 == 0
                 {
                     
-                    fr.chat.messages.append( Message(sender: fr, isMine: false, text: "привет \(i) fdg\(j) dfg dfgdfg dsfg dfg sdfg sdfg sdfg sdfgsd fgs dfgsdf sfgd", isRead : true,time: "11:41"))
+                    fr.chat.messages.append( Message(sender: fr, isMine: false, text: "Привет Стив", isRead : true,time: "11:41"))
                 }
                 else
                 {
-                    fr.chat.messages.append( Message(sender: data.myProfile, isMine: true, text: "привет \(i)", isRead : true,time: "11:40"))
+                    fr.chat.messages.append( Message(sender: data.myProfile, isMine: true, text: "О привет, Джобс", isRead : true,time: "11:40"))
                 }
                
             }

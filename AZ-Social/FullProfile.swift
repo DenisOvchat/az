@@ -9,8 +9,6 @@
 import Foundation
 class FullProfile:Person
 {
-    
-    
     var postsStorage = WallPostStorage()
 
     var BirhDay:Date!
@@ -21,7 +19,7 @@ class FullProfile:Person
     var Phone:String?
     var Mail:String?
     var type:String?
-    var isMine:Bool = true
+    var isMine:Bool
     var topImageUrl:String?
     var Posts=[WallPost]()
     var friends=[Person]()
@@ -31,9 +29,5 @@ class FullProfile:Person
         super.init(name: name, secondName: secondName, pictUrl: pictUrl, isOnline: isOnline, id: id)
         
     }
-   /* override init(with dictionary:NSDictionary)
-    {
-        super.init(with: dictionary)
-    }*/
     
 }

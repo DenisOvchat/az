@@ -34,6 +34,7 @@
                     </view>
                 </subviews>
             </view>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="t6y-Ly-3PQ" firstAttribute="leading" secondItem="yiA-WR-yGp" secondAttribute="leading" constant="12" id="085-C4-Y8G"/>
                 <constraint firstItem="tcW-DU-75H" firstAttribute="leading" secondItem="yiA-WR-yGp" secondAttribute="leading" id="6hK-Nq-eGR"/>

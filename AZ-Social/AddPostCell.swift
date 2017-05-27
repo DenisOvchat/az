@@ -152,7 +152,7 @@ class AddPostCell: UITableViewCell,UITextViewDelegate,UICollectionViewDelegate,U
         
         let cell = attachmentsCollection.dequeueReusableCell(withReuseIdentifier: "attachmentCell",for: indexPath) as! AttachmentCellCollectionViewCell
         
-        cell.backgroundColor = UIColor.black
+        //cell.backgroundColor = UIColor.black
         cell.attachment = attachments[indexPath.row]
         cell.tag = indexPath.row
         // Configure the cell

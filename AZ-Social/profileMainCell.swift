@@ -45,9 +45,10 @@ class profileMainCell:UITableViewCell,UICollectionViewDataSource,UICollectionVie
 
             
             
-            topImageView.downloadedFrom(link: profile.topImageUrl!, contentMode: .scaleAspectFill)
+            topImageView.downloadedFrom(link: profile.topImageUrl!)
             topImageView.downloadedFrom(link: profile.topImageUrl!)
             avatarImage.downloadedFrom(link: profile.pictUrl)
+            avatarImage.contentMode = .scaleAspectFill
             avatarImage.layer.cornerRadius = 60
             avatarImage.layer.masksToBounds = true
             avatarImage.layer.borderWidth = 2

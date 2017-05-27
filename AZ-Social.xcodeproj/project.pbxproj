@@ -39,6 +39,7 @@
 		98822C0B1EB7873F008953C2 /* LoaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98822C0A1EB7873F008953C2 /* LoaderDelegate.swift */; };
 		98822C101EB7957E008953C2 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98822C0F1EB7957E008953C2 /* Loader.swift */; };
 		98822C121EB79597008953C2 /* WallPostLoaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98822C111EB79597008953C2 /* WallPostLoaders.swift */; };
+		98833AF21ED96EAE00729A78 /* Баку.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 98833AF11ED96EAE00729A78 /* Баку.jpg */; };
 		988BC8211EBA40D10075714D /* WallPostCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988BC81F1EBA40D10075714D /* WallPostCellTableViewCell.xib */; };
 		988BC8251EBA48490075714D /* AddPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988BC8231EBA48480075714D /* AddPostCell.swift */; };
 		988BC8261EBA48490075714D /* AddPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988BC8241EBA48490075714D /* AddPostCell.xib */; };
@@ -116,6 +117,7 @@
 		98822C0A1EB7873F008953C2 /* LoaderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderDelegate.swift; sourceTree = "<group>"; };
 		98822C0F1EB7957E008953C2 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		98822C111EB79597008953C2 /* WallPostLoaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPostLoaders.swift; sourceTree = "<group>"; };
+		98833AF11ED96EAE00729A78 /* Баку.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Баку.jpg"; sourceTree = "<group>"; };
 		988BC81F1EBA40D10075714D /* WallPostCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallPostCellTableViewCell.xib; sourceTree = "<group>"; };
 		988BC8231EBA48480075714D /* AddPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostCell.swift; sourceTree = "<group>"; };
 		988BC8241EBA48490075714D /* AddPostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPostCell.xib; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 				981F8E771E6AC843003A280A /* AZ_Social.xcdatamodeld */,
 				98C720D21EAC9DAF00BDAD18 /* AZ-Social-Bridging-Header.h */,
 				981F8E7F1E6AC843003A280A /* Info.plist */,
+				98833AF11ED96EAE00729A78 /* Баку.jpg */,
 			);
 			name = ApplicationMain;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				98654DB61ED8851D00D2AB95 /* PostPhotosCell.xib in Resources */,
 				984A5E681E7C00B3008EC368 /* ФонРегистрации.png in Resources */,
 				981F8E7B1E6AC843003A280A /* Assets.xcassets in Resources */,
+				98833AF21ED96EAE00729A78 /* Баку.jpg in Resources */,
 				981F8E761E6AC843003A280A /* Main.storyboard in Resources */,
 				988BC8261EBA48490075714D /* AddPostCell.xib in Resources */,
 				988BC8211EBA40D10075714D /* WallPostCellTableViewCell.xib in Resources */,

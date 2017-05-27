@@ -39,12 +39,13 @@ class LoginVC:UIViewController
                     if httpRsponse.statusCode == 200
                     {
                         
-                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                       /* let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         
                         let initialViewController = storyboard.instantiateViewController(withIdentifier: "TBC")
                         
                         self.appDelegate.window?.rootViewController = initialViewController
                         self.appDelegate.window?.makeKeyAndVisible()
+                        */
                         
                         //self.appDelegate.data.myProfile = p
                         
@@ -85,6 +86,11 @@ class LoginVC:UIViewController
         
         
         let data = ["email":loginField.text,"password":passwordField.text]
+        
+        let initialViewController = storyboard?.instantiateViewController(withIdentifier: "TBC")
+        
+        self.appDelegate.window?.rootViewController = initialViewController
+        
         
         ServerManager.shared(named: "main")?.POSTJSONRequestByAdding(postfix: "/persons/sign_in", data: data, complititionHandler:  { (data:Data?, response:URLResponse?, error:Error?) in
             

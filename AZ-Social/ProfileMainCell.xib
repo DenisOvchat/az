@@ -20,7 +20,7 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aY5-7M-efR">
                         <rect key="frame" x="49" y="16" width="310" height="127"/>
-                        <color key="backgroundColor" red="0.0" green="0.58039215690000001" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="140" id="RBd-Lh-3pd"/>
                         </constraints>
@@ -59,7 +59,7 @@
                     </button>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="dht-PP-UPY">
                         <rect key="frame" x="21" y="527" width="354" height="103"/>
-                        <color key="backgroundColor" red="0.0" green="0.58039215690000001" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="91" id="OZI-Nh-s36"/>
                         </constraints>
@@ -88,15 +88,15 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A91-dW-2vA">
                                 <rect key="frame" x="22" y="10" width="91" height="22"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="30" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="-8" minY="30" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="64" minY="-25" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="На карте" image="invalidName-1">
+                                <state key="normal" title="На карте" image="invalidName-3">
                                     <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5L1-is-Mnd">
                                 <rect key="frame" x="215" y="10" width="127" height="22"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="30" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="-14" minY="30" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="64" minY="-25" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Информация" image="info">
                                     <color key="titleColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
@@ -188,6 +188,6 @@
     </objects>
     <resources>
         <image name="info" width="16" height="16"/>
-        <image name="invalidName-1" width="16" height="16"/>
+        <image name="invalidName-3" width="16" height="16"/>
     </resources>
 </document>

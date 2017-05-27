@@ -17,8 +17,8 @@ class TBC:UITabBarController
         let navigationController = Controller(rootViewController: pageController)
         //view.backgroundColor = UIColor.red
         navigationController.setTitle(txt:"Друзья")
-        
-        
+        navigationController.tabBarItem.image = UIImage(named: "invalidName-1")
+        navigationController.tabBarItem.title = "Друзья"
         viewControllers?.append(navigationController)
         
         

@@ -45,7 +45,10 @@ class LentaVC:UIViewController,UITableViewDataSource,UITableViewDelegate,LoaderD
        // NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
         
     }
-   
+    override func viewDidLoad() {
+        postsLoader.load(count: 5)
+
+    }
     func keyboardNotification(notification: NSNotification) {
         if let userInfo = notification.userInfo {
             let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
@@ -132,7 +135,18 @@ class LentaVC:UIViewController,UITableViewDataSource,UITableViewDelegate,LoaderD
     func didLoadEntitiesToTheStart(Amount: Int) {
         
     }
-    
+    func didLoadEntities(Amount: UInt) {
+        
+        
+        
+        
+        //  tableView.beginUpdates()
+        //let paths = IndexPath.setOfIndexPaths(startRow: 2, count: Amount, in: 0)
+        //  tableView.insertRows(at: paths, with: UITableViewRowAnimation.automatic)
+        tableView.reloadSections(IndexSet(integersIn: 2...2), with: UITableViewRowAnimation.automatic)
+        //  tableView.endUpdates()
+        
+    }
     func didReloadEntities(indexes:[Int])
     {}
     func didDeleteEntities(indexes:[Int])
